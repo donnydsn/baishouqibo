@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { GradientText } from '@/components/ui/GradientText';
-import { Newspaper, Trophy, Rocket, Calculator, BookOpen, Brain, ArrowRight } from 'lucide-react';
+import { Newspaper, Trophy, Rocket, Calculator, BookOpen, Brain } from 'lucide-react';
 import Link from 'next/link';
 
 const features = [
@@ -60,14 +60,14 @@ const containerVariants = {
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 24 },
+  hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
 export function FeatureGrid() {
   return (
-    <section className="py-20 sm:py-28 px-5 sm:px-8">
-      <div className="max-w-5xl mx-auto">
+    <section className="py-24 sm:py-32 px-6">
+      <div className="max-w-4xl mx-auto">
         {/* Section Title */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -76,10 +76,10 @@ export function FeatureGrid() {
           transition={{ duration: 0.6 }}
           className="text-center mb-14 sm:mb-16"
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4">
             <GradientText>六大核心功能</GradientText>
           </h2>
-          <p className="text-white/40 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
+          <p className="text-white/40 text-sm sm:text-base max-w-md mx-auto leading-relaxed">
             营销获客 + 会员管理，一站式赋能你的指数增长之路
           </p>
         </motion.div>
@@ -90,32 +90,29 @@ export function FeatureGrid() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5"
         >
           {features.map((feature) => {
             const Icon = feature.icon;
             return (
               <motion.div key={feature.title} variants={itemVariants}>
                 <Link href={feature.href} className="block">
-                  <GlassCard className="group h-full !p-6 sm:!p-8 hover:!translate-y-[-4px] hover:!shadow-[0_12px_40px_rgba(139,92,246,0.12)]">
-                    <div className="flex items-center gap-4 sm:gap-5">
+                  <GlassCard className="group h-full !p-6 sm:!p-7">
+                    <div className="flex items-start gap-4">
                       {/* Icon */}
-                      <div className={`shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center`}>
-                        <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+                      <div className={`shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center`}>
+                        <Icon className="w-5 h-5 text-white" />
                       </div>
 
                       {/* Content */}
                       <div className="flex-1 min-w-0">
-                        <h3 className="text-lg sm:text-xl font-semibold text-white mb-1.5 group-hover:text-purple-300 transition-colors">
+                        <h3 className="text-base font-medium text-white/80 mb-1.5 group-hover:text-white transition-colors">
                           {feature.title}
                         </h3>
-                        <p className="text-sm text-white/40 leading-relaxed line-clamp-2">
+                        <p className="text-sm text-white/35 leading-relaxed line-clamp-2">
                           {feature.description}
                         </p>
                       </div>
-
-                      {/* Arrow */}
-                      <ArrowRight className="shrink-0 w-4 h-4 text-white/20 group-hover:text-white/50 group-hover:translate-x-1 transition-all" />
                     </div>
                   </GlassCard>
                 </Link>

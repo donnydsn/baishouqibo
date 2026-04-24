@@ -28,8 +28,8 @@ const missions = [
 
 export function MissionSection() {
   return (
-    <section className="py-20 sm:py-28 px-5 sm:px-8">
-      <div className="max-w-5xl mx-auto">
+    <section className="py-24 sm:py-32 px-6">
+      <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -37,10 +37,10 @@ export function MissionSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-14 sm:mb-16"
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4">
             <GradientText variant="cyan">使命 · 愿景 · 价值观</GradientText>
           </h2>
-          <p className="text-white/40 text-base sm:text-lg">
+          <p className="text-white/40 text-sm sm:text-base">
             颠覆常识的创新思维，帮助普通人翻身逆袭
           </p>
         </motion.div>
@@ -51,17 +51,17 @@ export function MissionSection() {
             return (
               <motion.div
                 key={mission.title}
-                initial={{ opacity: 0, y: 24 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.12 }}
               >
                 <GlassCard className="glass-card-no-hover h-full !p-7 sm:!p-8 text-center">
-                  <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${mission.gradient} flex items-center justify-center mx-auto mb-6`}>
-                    <Icon className="w-7 h-7 text-white" />
+                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${mission.gradient} flex items-center justify-center mx-auto mb-5`}>
+                    <Icon className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold gradient-text mb-4">{mission.title}</h3>
-                  <p className="text-sm text-white/40 leading-[1.8]">{mission.content}</p>
+                  <h3 className="text-lg font-semibold gradient-text mb-3">{mission.title}</h3>
+                  <p className="text-sm text-white/35 leading-relaxed">{mission.content}</p>
                 </GlassCard>
               </motion.div>
             );

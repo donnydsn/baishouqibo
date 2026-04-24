@@ -2,9 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, Search } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { NAV_ITEMS, SITE_CONFIG } from '@/lib/constants';
-import { GlowButton } from '@/components/ui/GlowButton';
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,18 +21,18 @@ export function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#0a0a0f]/80 backdrop-blur-xl border-b border-white/[0.04]'
+          ? 'bg-[#0a0a0a]/80 backdrop-blur-md'
           : 'bg-transparent'
       }`}
     >
-      <div className="max-w-6xl mx-auto px-5 sm:px-8">
-        <div className="flex items-center justify-between h-16 sm:h-18">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 shrink-0">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm">
+            <div className="w-7 h-7 rounded-lg bg-white/[0.08] border border-white/[0.06] flex items-center justify-center text-white/80 font-bold text-xs">
               白
             </div>
-            <span className="text-lg font-bold gradient-text hidden sm:block">
+            <span className="text-base font-semibold text-white/90 hidden sm:block">
               {SITE_CONFIG.name}
             </span>
           </Link>
@@ -44,7 +43,7 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="px-3 py-2 text-sm text-white/50 hover:text-white/90 rounded-lg hover:bg-white/[0.04] transition-all"
+                className="px-3.5 py-2 text-sm text-white/50 hover:text-white/90 transition-colors"
               >
                 {item.label}
               </Link>
@@ -52,20 +51,19 @@ export function Header() {
           </nav>
 
           {/* Right Actions */}
-          <div className="flex items-center gap-3">
-            <div className="hidden md:flex items-center gap-2 px-3.5 py-2 bg-white/[0.03] border border-white/[0.06] rounded-xl text-sm text-white/30 hover:text-white/50 hover:border-white/[0.1] transition-all cursor-pointer">
-              <Search className="w-3.5 h-3.5" />
-              <span>搜索</span>
-            </div>
-
-            <div className="hidden sm:flex items-center gap-2.5">
-              <GlowButton variant="outline" size="sm" href="/login">
-                登录
-              </GlowButton>
-              <GlowButton size="sm" href="/register">
-                免费加入
-              </GlowButton>
-            </div>
+          <div className="flex items-center gap-4">
+            <Link
+              href="/login"
+              className="hidden sm:block text-sm text-white/50 hover:text-white/90 transition-colors"
+            >
+              登录
+            </Link>
+            <Link
+              href="/register"
+              className="hidden sm:block text-sm text-white/80 hover:text-white transition-colors"
+            >
+              加入
+            </Link>
 
             <button
               className="lg:hidden p-2 text-white/50 hover:text-white/80 transition-colors"
@@ -79,25 +77,33 @@ export function Header() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-[#0a0a0f]/95 backdrop-blur-xl border-t border-white/[0.04]">
-          <div className="max-w-6xl mx-auto px-5 py-5 space-y-1">
+        <div className="lg:hidden bg-[#0a0a0a]/95 backdrop-blur-md border-t border-white/[0.04]">
+          <div className="max-w-6xl mx-auto px-6 py-8 space-y-1">
             {NAV_ITEMS.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="block px-4 py-3 text-white/50 hover:text-white/90 hover:bg-white/[0.04] rounded-xl transition-all text-[15px]"
+                className="block px-4 py-3.5 text-white/50 hover:text-white/90 transition-colors text-[15px]"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.label}
               </Link>
             ))}
-            <div className="pt-5 flex gap-3">
-              <GlowButton variant="outline" size="sm" href="/login" className="flex-1">
+            <div className="pt-6 flex gap-4">
+              <Link
+                href="/login"
+                className="flex-1 text-center py-2.5 text-sm text-white/50 hover:text-white/90 transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
                 登录
-              </GlowButton>
-              <GlowButton size="sm" href="/register" className="flex-1">
-                免费加入
-              </GlowButton>
+              </Link>
+              <Link
+                href="/register"
+                className="flex-1 text-center py-2.5 text-sm text-white/80 hover:text-white transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                加入
+              </Link>
             </div>
           </div>
         </div>

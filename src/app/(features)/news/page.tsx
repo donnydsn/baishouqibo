@@ -107,7 +107,7 @@ function NewsCard({ item, index }: { item: NewsItem; index: number }) {
                 transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
                 className="overflow-hidden"
               >
-                <div className="pt-3 border-t border-white/10">
+                <div className="pt-3 border-t border-white/[0.08]">
                   <p className="text-text-secondary text-sm leading-relaxed whitespace-pre-line">
                     {item.content}
                   </p>
@@ -149,7 +149,7 @@ export default function NewsPage() {
     : mockNews.filter((item) => item.category === activeCategory).length;
 
   return (
-    <section className="relative min-h-screen py-20 overflow-hidden">
+    <section className="relative min-h-screen bg-[#0a0a0a] py-20 sm:py-28 overflow-hidden">
       {/* 背景装饰 */}
       <div className="absolute inset-0 pointer-events-none">
         <div
@@ -162,10 +162,10 @@ export default function NewsPage() {
         />
       </div>
 
-      <div className="relative z-10 px-5 sm:px-8 max-w-5xl mx-auto">
+      <div className="relative z-10 px-6 max-w-5xl mx-auto">
         {/* 页面标题 */}
         <motion.div
-          className="text-center mb-8 sm:mb-10"
+          className="text-center mb-4"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -177,7 +177,7 @@ export default function NewsPage() {
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
             <GradientText>动态墙</GradientText>
           </h1>
-          <p className="text-text-secondary max-w-2xl mx-auto text-base sm:text-lg">
+          <p className="text-white/40 max-w-2xl mx-auto text-sm mb-12 sm:mb-16">
             了解白手启播的最新公告、活动、成员故事和系统更新
           </p>
         </motion.div>
@@ -196,8 +196,8 @@ export default function NewsPage() {
               className={cn(
                 'flex items-center gap-2 px-4 py-2.5 rounded-xl border transition-all duration-300 text-sm font-medium',
                 activeCategory === cat.key
-                  ? 'border-purple-500/50 bg-purple-500/15 text-purple-300 shadow-[0_0_20px_rgba(139,92,246,0.2)]'
-                  : 'border-white/8 bg-white/[0.03] text-white/50 hover:border-white/15 hover:bg-white/[0.06] hover:text-white/70'
+                  ? 'border-purple-500/50 bg-purple-500/15 text-purple-300'
+                  : 'border-white/[0.06] bg-white/[0.03] text-white/40 hover:border-white/[0.1] hover:bg-white/[0.06] hover:text-white/55'
               )}
             >
               {cat.icon}
@@ -226,7 +226,7 @@ export default function NewsPage() {
           transition={{ duration: 0.4, delay: 0.3 }}
         >
           <p className="text-text-tertiary text-sm">
-            共 <span className="text-white/70 font-medium">{activeCount}</span> 条动态
+            共 <span className="text-white/55 font-medium">{activeCount}</span> 条动态
           </p>
           <div className="flex items-center gap-1.5 text-text-tertiary text-xs">
             <Tag className="w-3.5 h-3.5" />

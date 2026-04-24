@@ -21,12 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-CN" className="h-full antialiased">
-      <body className="min-h-full flex flex-col bg-[#0a0a0f] text-[#f1f5f9]">
-        {/* Background Glow Effects */}
-        <div className="bg-glow bg-glow-1" />
-        <div className="bg-glow bg-glow-2" />
-        <div className="bg-glow bg-glow-3" />
-
+      <body className="min-h-full flex flex-col bg-[#0a0a0a] text-white/90">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { AnimatedCounter } from '@/components/ui/AnimatedCounter';
-import { GlassCard } from '@/components/ui/GlassCard';
 import { formatNumber, formatCurrency } from '@/lib/utils';
 import { mockStats } from '@/data/mock-stats';
 
@@ -15,29 +14,30 @@ const stats = [
 
 export function StatsBar() {
   return (
-    <section className="py-16 sm:py-20 px-5 sm:px-8">
-      <div className="max-w-5xl mx-auto">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+    <section className="py-20 sm:py-28 px-6">
+      <div className="max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="text-center"
             >
-              <GlassCard className="glass-card-no-hover text-center py-8 sm:py-10">
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold gradient-text-gold mb-3">
-                  <AnimatedCounter
-                    value={stat.value}
-                    duration={2000}
-                    prefix={stat.prefix}
-                    suffix={stat.suffix}
-                    formatFn={stat.formatFn}
-                  />
-                </div>
-                <div className="text-xs sm:text-sm text-white/40 tracking-wider">{stat.label}</div>
-              </GlassCard>
+              <div className="text-3xl sm:text-4xl font-bold gradient-text-gold mb-3">
+                <AnimatedCounter
+                  value={stat.value}
+                  duration={2000}
+                  prefix={stat.prefix}
+                  suffix={stat.suffix}
+                  formatFn={stat.formatFn}
+                />
+              </div>
+              <div className="text-xs text-white/30 uppercase tracking-wider">
+                {stat.label}
+              </div>
             </motion.div>
           ))}
         </div>

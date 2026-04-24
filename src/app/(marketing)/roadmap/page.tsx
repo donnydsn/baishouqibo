@@ -185,7 +185,6 @@ function StageCard({ stage, index }: { stage: RoadmapStage; index: number }) {
                   className="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center text-white"
                   style={{
                     background: `linear-gradient(135deg, ${stage.glowColor}, rgba(139,92,246,0.3))`,
-                    boxShadow: `0 0 20px ${stage.glowColor}`,
                   }}
                 >
                   {stage.icon}
@@ -212,7 +211,7 @@ function StageCard({ stage, index }: { stage: RoadmapStage; index: number }) {
                     </p>
                     <div className="space-y-2.5">
                       {stage.conditions.map((condition, i) => (
-                        <div key={i} className="flex items-start gap-2 text-sm text-white/60">
+                        <div key={i} className="flex items-start gap-2 text-sm text-white/55">
                           <CheckCircle2 className="w-3.5 h-3.5 mt-0.5 text-emerald-400/60 flex-shrink-0" />
                           <span>{condition}</span>
                         </div>
@@ -228,7 +227,7 @@ function StageCard({ stage, index }: { stage: RoadmapStage; index: number }) {
                     </p>
                     <div className="space-y-2.5">
                       {stage.benefits.map((benefit, i) => (
-                        <div key={i} className="flex items-start gap-2 text-sm text-white/60">
+                        <div key={i} className="flex items-start gap-2 text-sm text-white/55">
                           <Star className="w-3.5 h-3.5 mt-0.5 text-amber-400/60 flex-shrink-0" />
                           <span>{benefit}</span>
                         </div>
@@ -260,7 +259,6 @@ function StageCard({ stage, index }: { stage: RoadmapStage; index: number }) {
         {/* 节点圆圈 */}
         <div
           className={`relative w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-sm bg-gradient-to-br ${stage.color}`}
-          style={{ boxShadow: `0 0 20px ${stage.glowColor}` }}
         >
           {stage.id}
         </div>
@@ -293,7 +291,6 @@ function StageCard({ stage, index }: { stage: RoadmapStage; index: number }) {
                   className="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center text-white"
                   style={{
                     background: `linear-gradient(135deg, ${stage.glowColor}, rgba(139,92,246,0.3))`,
-                    boxShadow: `0 0 20px ${stage.glowColor}`,
                   }}
                 >
                   {stage.icon}
@@ -320,7 +317,7 @@ function StageCard({ stage, index }: { stage: RoadmapStage; index: number }) {
                     </p>
                     <div className="space-y-2.5">
                       {stage.conditions.map((condition, i) => (
-                        <div key={i} className="flex items-start gap-2 text-sm text-white/60">
+                        <div key={i} className="flex items-start gap-2 text-sm text-white/55">
                           <CheckCircle2 className="w-3.5 h-3.5 mt-0.5 text-emerald-400/60 flex-shrink-0" />
                           <span>{condition}</span>
                         </div>
@@ -336,7 +333,7 @@ function StageCard({ stage, index }: { stage: RoadmapStage; index: number }) {
                     </p>
                     <div className="space-y-2.5">
                       {stage.benefits.map((benefit, i) => (
-                        <div key={i} className="flex items-start gap-2 text-sm text-white/60">
+                        <div key={i} className="flex items-start gap-2 text-sm text-white/55">
                           <Star className="w-3.5 h-3.5 mt-0.5 text-amber-400/60 flex-shrink-0" />
                           <span>{benefit}</span>
                         </div>
@@ -372,7 +369,6 @@ function StageCard({ stage, index }: { stage: RoadmapStage; index: number }) {
               className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center text-white"
               style={{
                 background: `linear-gradient(135deg, ${stage.glowColor}, rgba(139,92,246,0.3))`,
-                boxShadow: `0 0 15px ${stage.glowColor}`,
               }}
             >
               {stage.icon}
@@ -392,7 +388,7 @@ function StageCard({ stage, index }: { stage: RoadmapStage; index: number }) {
                 <p className="text-[10px] font-medium text-text-tertiary mb-1.5">所需条件</p>
                 <div className="space-y-2.5">
                   {stage.conditions.map((condition, i) => (
-                    <div key={i} className="flex items-start gap-1.5 text-xs text-white/60">
+                    <div key={i} className="flex items-start gap-1.5 text-xs text-white/55">
                       <CheckCircle2 className="w-3 h-3 mt-0.5 text-emerald-400/60 flex-shrink-0" />
                       <span>{condition}</span>
                     </div>
@@ -403,7 +399,7 @@ function StageCard({ stage, index }: { stage: RoadmapStage; index: number }) {
                 <p className="text-[10px] font-medium text-text-tertiary mb-1.5">权益说明</p>
                 <div className="space-y-2.5">
                   {stage.benefits.map((benefit, i) => (
-                    <div key={i} className="flex items-start gap-1.5 text-xs text-white/60">
+                    <div key={i} className="flex items-start gap-1.5 text-xs text-white/55">
                       <Star className="w-3 h-3 mt-0.5 text-amber-400/60 flex-shrink-0" />
                       <span>{benefit}</span>
                     </div>
@@ -424,7 +420,7 @@ function StageCard({ stage, index }: { stage: RoadmapStage; index: number }) {
 
 export default function RoadmapPage() {
   return (
-    <section className="relative min-h-screen py-16 sm:py-20 overflow-hidden">
+    <section className="relative min-h-screen bg-[#0a0a0a] py-20 sm:py-28 overflow-hidden">
       {/* 背景装饰 */}
       <div className="absolute inset-0 pointer-events-none">
         <div
@@ -440,10 +436,10 @@ export default function RoadmapPage() {
         <div className="absolute bottom-[-200px] right-[-200px] w-[500px] h-[500px] rounded-full bg-cyan-600/10 blur-[100px]" />
       </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-8">
+      <div className="relative z-10 max-w-4xl mx-auto px-6">
         {/* 页面标题 */}
         <motion.div
-          className="text-center mb-12 sm:mb-16"
+          className="text-center mb-4"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -455,7 +451,7 @@ export default function RoadmapPage() {
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
             <GradientText>从直播间小白到平台合伙人</GradientText>
           </h1>
-          <p className="text-text-secondary max-w-2xl mx-auto text-base sm:text-lg">
+          <p className="text-white/40 max-w-2xl mx-auto text-sm mb-12 sm:mb-16">
             10个阶段，完整成长路径。每一步都有清晰的目标和丰厚的回报，助你实现从学习者到合伙人的蜕变。
           </p>
         </motion.div>

@@ -1,78 +1,50 @@
 @import "tailwindcss";
 
 /* ============================================
-   【白手启播】设计系统 - 深色毛玻璃主题
+   【白手启播】设计系统 v2
+   参考 trae.cn 极简深色风格 + 毛玻璃
    ============================================ */
 
 :root {
-  /* 基础颜色 - 深色背景体系 */
-  --bg-primary: #0a0a0f;      /* 深黑蓝 - 主背景 */
-  --bg-secondary: #0f0f1a;    /* 次级背景 */
-  --bg-tertiary: #141420;     /* 三级背景 */
+  /* 背景 - 纯黑系（对齐 trae.cn） */
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #111111;
+  --bg-tertiary: #1a1a1a;
 
-  /* 毛玻璃效果 */
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-blur: blur(20px) saturate(120%);
+  /* 毛玻璃 - 极度克制 */
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.06);
+  --glass-hover-border: rgba(255, 255, 255, 0.1);
+  --glass-blur: blur(24px) saturate(100%);
 
-  /* 文字颜色 */
-  --text-primary: #f1f5f9;   /* 亮灰白 - 主文字 */
-  --text-secondary: #94a3b8;  /* 中灰 - 次要文字 */
-  --text-tertiary: #64748b;   /* 暗灰 - 辅助文字 */
+  /* 文字 - 严格层级 */
+  --text-primary: rgba(255, 255, 255, 0.92);
+  --text-secondary: rgba(255, 255, 255, 0.55);
+  --text-tertiary: rgba(255, 255, 255, 0.3);
 
-  /* 渐变色 - 主渐变（紫蓝） */
-  --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
-  --gradient-primary-hover: linear-gradient(135deg, #818cf8 0%, #a78bfa 50%, #c084fc 100%);
+  /* 渐变 - 仅用于标题强调 */
+  --gradient-primary: linear-gradient(135deg, #a78bfa 0%, #818cf8 50%, #6366f1 100%);
+  --gradient-gold: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  --gradient-cyan: linear-gradient(135deg, #22d3ee 0%, #3b82f6 100%);
 
-  /* 渐变色 - 辅渐变（青蓝） */
-  --gradient-secondary: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+  /* 强调色 */
+  --accent: #818cf8;
+  --accent-gold: #fbbf24;
 
-  /* 强调色 - 琥珀金 */
-  --accent-gold: #f59e0b;
-  --accent-gold-light: #fbbf24;
-
-  /* 功能色 */
-  --success: #10b981;
-  --warning: #f59e0b;
-  --error: #ef4444;
-  --info: #3b82f6;
-
-  /* 阴影 */
-  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.3);
-  --shadow-glow: 0 0 20px rgba(139, 92, 246, 0.3);
-
-  /* 圆角 */
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
-
-  /* 间距 */
-  --space-xs: 4px;
-  --space-sm: 8px;
-  --space-md: 16px;
-  --space-lg: 24px;
-  --space-xl: 32px;
-  --space-2xl: 48px;
+  /* 圆角 - 统一小圆角 */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
 }
 
 @theme inline {
   --color-bg-primary: var(--bg-primary);
   --color-bg-secondary: var(--bg-secondary);
   --color-bg-tertiary: var(--bg-tertiary);
-  --color-text-primary: var(--text-primary);
-  --color-text-secondary: var(--text-secondary);
-  --color-text-tertiary: var(--text-tertiary);
-  --color-accent-gold: var(--accent-gold);
-  --color-accent-gold-light: var(--accent-gold-light);
-  --color-success: var(--success);
-  --color-warning: var(--warning);
-  --color-error: var(--error);
-  --color-info: var(--info);
 }
 
 /* ============================================
-   全局样式
+   全局基础
    ============================================ */
 
 * {
@@ -88,31 +60,38 @@ html {
 body {
   background: var(--bg-primary);
   color: var(--text-primary);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-size: 15px;
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+@media (min-width: 768px) {
+  body { font-size: 16px; }
+}
+
 /* ============================================
-   毛玻璃卡片基础样式
+   毛玻璃卡片 - 极简版
    ============================================ */
 
 .glass-card {
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur); /* Safari 兼容 */
+  -webkit-backdrop-filter: var(--glass-blur);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-glass);
-  transition: all 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .glass-card:hover {
-  border-color: rgba(255, 255, 255, 0.12);
-  box-shadow: var(--shadow-glass), var(--shadow-glow);
-  transform: translateY(-2px);
+  border-color: var(--glass-hover-border);
+}
+
+/* 无 hover 效果 */
+.glass-card-no-hover:hover {
+  border-color: var(--glass-border);
 }
 
 /* ============================================
@@ -127,57 +106,42 @@ body {
 }
 
 .gradient-text-gold {
-  background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 50%, #fcd34d 100%);
+  background: var(--gradient-gold);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-text-cyan {
-  background: var(--gradient-secondary);
+  background: var(--gradient-cyan);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 /* ============================================
-   发光按钮
+   按钮 - 克制优雅
    ============================================ */
 
 .glow-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: var(--gradient-primary);
   color: white;
   border: none;
   border-radius: var(--radius-md);
-  padding: 12px 32px;
-  font-weight: 600;
-  font-size: 1rem;
+  padding: 12px 28px;
+  font-weight: 500;
+  font-size: 14px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
-  position: relative;
-  overflow: hidden;
-}
-
-.glow-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  transition: left 0.5s ease;
+  transition: all 0.25s ease;
+  letter-spacing: 0.01em;
 }
 
 .glow-button:hover {
-  background: var(--gradient-primary-hover);
-  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.5);
-  transform: translateY(-2px);
-}
-
-.glow-button:hover::before {
-  left: 100%;
+  opacity: 0.9;
+  transform: translateY(-1px);
 }
 
 .glow-button:active {
@@ -185,265 +149,85 @@ body {
 }
 
 /* ============================================
-   背景光效
+   背景光效 - 极度淡化
    ============================================ */
 
 .bg-glow {
   position: fixed;
   border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.15;
+  filter: blur(120px);
+  opacity: 0.07;
   pointer-events: none;
   z-index: -1;
 }
 
 .bg-glow-1 {
-  width: 600px;
-  height: 600px;
+  width: 800px;
+  height: 800px;
   background: radial-gradient(circle, #6366f1 0%, transparent 70%);
-  top: -200px;
-  right: -200px;
+  top: -400px;
+  right: -300px;
 }
 
 .bg-glow-2 {
-  width: 500px;
-  height: 500px;
+  width: 600px;
+  height: 600px;
   background: radial-gradient(circle, #8b5cf6 0%, transparent 70%);
-  bottom: -150px;
-  left: -150px;
+  bottom: -300px;
+  left: -200px;
 }
 
 .bg-glow-3 {
-  width: 400px;
-  height: 400px;
+  width: 500px;
+  height: 500px;
   background: radial-gradient(circle, #06b6d4 0%, transparent 70%);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 40%;
+  left: 40%;
 }
 
 /* ============================================
-   滚动条样式
+   滚动条
    ============================================ */
 
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-secondary);
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 /* ============================================
-   选择文字样式
+   选择 & 链接
    ============================================ */
 
 ::selection {
-  background: rgba(99, 102, 241, 0.3);
-  color: var(--text-primary);
+  background: rgba(129, 140, 248, 0.25);
 }
-
-/* ============================================
-   链接样式
-   ============================================ */
 
 a {
   color: var(--text-primary);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease;
 }
 
 a:hover {
-  color: #a855f7;
+  color: var(--accent);
 }
 
 /* ============================================
    工具类
    ============================================ */
 
-.text-gradient {
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.bg-gradient {
-  background: var(--gradient-primary);
-}
-
-.glass {
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border);
-}
-
-/* 动画相关 */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
-  }
-}
-
-.animate-fadeInUp {
-  animation: fadeInUp 0.6s ease-out;
-}
-
-.animate-fadeIn {
-  animation: fadeIn 0.6s ease-out;
-}
-
-.animate-slideInLeft {
-  animation: slideInLeft 0.6s ease-out;
-}
-
-.animate-slideInRight {
-  animation: slideInRight 0.6s ease-out;
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
-}
-
-/* ============================================
-   全局排版优化 - 增加呼吸感和高级感
-   ============================================ */
-
-/* 页面容器统一约束 */
-.page-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-@media (min-width: 768px) {
-  .page-container {
-    padding: 0 32px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .page-container {
-    padding: 0 48px;
-  }
-}
-
-/* 区块间距标准化 */
-.section-padding {
-  padding-top: 80px;
-  padding-bottom: 80px;
-}
-
-@media (min-width: 768px) {
-  .section-padding {
-    padding-top: 100px;
-    padding-bottom: 100px;
-  }
-}
-
-/* 区块标题统一样式 */
-.section-title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 12px;
-  line-height: 1.3;
-}
-
-@media (min-width: 768px) {
-  .section-title {
-    font-size: 2.5rem;
-  }
-}
-
-.section-subtitle {
-  font-size: 1rem;
-  color: var(--text-secondary);
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.7;
-}
-
-@media (min-width: 768px) {
-  .section-subtitle {
-    font-size: 1.125rem;
-  }
-}
-
-/* 毛玻璃卡片优化 - 增加内边距和层次感 */
-.glass-card {
-  padding: 24px;
-}
-
-@media (min-width: 768px) {
-  .glass-card {
-    padding: 32px;
-  }
-}
-
-/* 禁止文字选中时的毛玻璃hover效果（避免误触） */
-.glass-card-no-hover:hover {
-  transform: none;
-  border-color: var(--glass-border);
-  box-shadow: var(--shadow-glass);
-}
-
-/* 滚动容器 - 用于标签栏等 */
 .scroll-container {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -454,13 +238,12 @@ a:hover {
   display: none;
 }
 
-/* 优化文字可读性 */
-body {
-  font-size: 15px;
+/* 动画 */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-@media (min-width: 768px) {
-  body {
-    font-size: 16px;
-  }
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out both;
 }

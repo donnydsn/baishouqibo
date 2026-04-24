@@ -31,12 +31,12 @@ function CustomTooltip({ active, payload, label }: { active?: boolean; payload?:
   if (!active || !payload || payload.length === 0) return null;
   return (
     <div className="glass-card p-3 text-sm min-w-[160px]">
-      <p className="text-white/60 mb-2">第 {label} 轮</p>
+      <p className="text-white/55 mb-2">第 {label} 轮</p>
       {payload.map((entry, idx) => (
         <div key={idx} className="flex items-center justify-between gap-4 mb-1">
           <span className="flex items-center gap-2">
             <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: entry.color }} />
-            <span className="text-white/70">{entry.name}</span>
+            <span className="text-white/55">{entry.name}</span>
           </span>
           <span className="text-white font-medium">{formatCurrency(entry.value)}</span>
         </div>
@@ -203,7 +203,7 @@ export default function CalculatorPage() {
   const currentLevelInfo = LEVELS.find((l) => l.level === selectedLevel)!;
 
   return (
-    <section className="relative min-h-screen py-16 sm:py-20 overflow-hidden">
+    <section className="relative min-h-screen bg-[#0a0a0a] py-20 sm:py-28 overflow-hidden">
       {/* 背景装饰 */}
       <div className="absolute inset-0 pointer-events-none">
         <div
@@ -216,10 +216,10 @@ export default function CalculatorPage() {
         />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
+      <div className="relative z-10 max-w-6xl mx-auto px-6">
         {/* 页面标题 */}
         <motion.div
-          className="text-center mb-8 sm:mb-10"
+          className="text-center mb-4"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -230,7 +230,7 @@ export default function CalculatorPage() {
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
             <GradientText>预览你的指数增长收益</GradientText>
           </h1>
-          <p className="text-text-secondary max-w-2xl mx-auto text-base sm:text-lg">
+          <p className="text-white/40 max-w-2xl mx-auto text-sm mb-12 sm:mb-16">
             基于「1 带 9 出 3」裂变模型，模拟不同等级、速度和周期下的分润收益
           </p>
         </motion.div>
@@ -259,8 +259,8 @@ export default function CalculatorPage() {
                     className={cn(
                       'relative flex items-center justify-between px-4 py-3 rounded-xl border transition-all duration-200 text-left',
                       selectedLevel === l.level
-                        ? 'border-purple-500/50 bg-purple-500/10 shadow-[0_0_15px_rgba(139,92,246,0.2)]'
-                        : 'border-white/5 bg-white/[0.02] hover:border-white/15 hover:bg-white/[0.04]'
+                        ? 'border-purple-500/50 bg-purple-500/10'
+                        : 'border-white/[0.06] bg-white/[0.03] hover:border-white/[0.1] hover:bg-white/[0.04]'
                     )}
                   >
                     <div className="flex items-center gap-3">
@@ -274,7 +274,7 @@ export default function CalculatorPage() {
                       >
                         {l.level}
                       </span>
-                      <span className={cn('font-medium', selectedLevel === l.level ? 'text-white' : 'text-white/60')}>
+                      <span className={cn('font-medium', selectedLevel === l.level ? 'text-white' : 'text-white/55')}>
                         {l.name}
                       </span>
                     </div>
@@ -306,8 +306,8 @@ export default function CalculatorPage() {
                     className={cn(
                       'flex flex-col items-center px-4 py-3 rounded-xl border transition-all duration-200',
                       selectedPeriod === r.period
-                        ? 'border-cyan-500/50 bg-cyan-500/10 shadow-[0_0_15px_rgba(6,182,212,0.2)]'
-                        : 'border-white/5 bg-white/[0.02] hover:border-white/15 hover:bg-white/[0.04]'
+                        ? 'border-cyan-500/50 bg-cyan-500/10'
+                        : 'border-white/[0.06] bg-white/[0.03] hover:border-white/[0.1] hover:bg-white/[0.04]'
                     )}
                   >
                     <span
@@ -339,8 +339,8 @@ export default function CalculatorPage() {
                     className={cn(
                       'flex flex-col items-center px-3 py-3 rounded-xl border transition-all duration-200',
                       selectedSpeed === s.speed
-                        ? 'border-amber-500/50 bg-amber-500/10 shadow-[0_0_15px_rgba(245,158,11,0.2)]'
-                        : 'border-white/5 bg-white/[0.02] hover:border-white/15 hover:bg-white/[0.04]'
+                        ? 'border-amber-500/50 bg-amber-500/10'
+                        : 'border-white/[0.06] bg-white/[0.03] hover:border-white/[0.1] hover:bg-white/[0.04]'
                     )}
                   >
                     <span
@@ -361,7 +361,7 @@ export default function CalculatorPage() {
 
             {/* 模型说明 */}
             <GlassCard hover={false} className="space-y-3 !p-5 sm:!p-6">
-              <h4 className="text-white/80 font-medium text-sm">数学模型说明</h4>
+              <h4 className="text-white/55 font-medium text-sm">数学模型说明</h4>
               <div className="space-y-2 text-xs text-text-tertiary leading-relaxed">
                 <p>
                   <span className="text-purple-400 font-medium">1 带 9 出 3：</span>
@@ -503,7 +503,7 @@ export default function CalculatorPage() {
 
               {/* 累计收益面积图 */}
               <div className="overflow-hidden">
-                <h4 className="text-white/70 text-sm font-medium mb-3">累计收益趋势</h4>
+                <h4 className="text-white/55 text-sm font-medium mb-3">累计收益趋势</h4>
                 <CumulativeChart data={chartData} />
               </div>
             </GlassCard>
@@ -533,7 +533,7 @@ export default function CalculatorPage() {
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
-                    <tr className="border-b border-white/10">
+                    <tr className="border-b border-white/[0.06]">
                       <th className="text-left text-text-tertiary font-medium py-3 px-3">轮次</th>
                       <th className="text-right text-text-tertiary font-medium py-3 px-3">领教员</th>
                       <th className="text-right text-text-tertiary font-medium py-3 px-3">新学员</th>
@@ -555,13 +555,13 @@ export default function CalculatorPage() {
                             exit={{ opacity: 0, y: -10 }}
                             transition={{ duration: 0.2 }}
                             className={cn(
-                              'border-b border-white/5 transition-colors',
+                              'border-b border-white/[0.06] transition-colors',
                               isPayback && 'bg-emerald-500/5'
                             )}
                           >
                             <td className="py-3 px-3">
                               <div className="flex items-center gap-2">
-                                <span className="text-white/80 font-medium">第 {d.round} 轮</span>
+                                <span className="text-white/55 font-medium">第 {d.round} 轮</span>
                                 {isPayback && (
                                   <Badge variant="success" className="text-[10px] px-1.5 py-0">
                                     回本
@@ -569,10 +569,10 @@ export default function CalculatorPage() {
                                 )}
                               </div>
                             </td>
-                            <td className="text-right py-3 px-3 text-white/70 font-mono">
+                            <td className="text-right py-3 px-3 text-white/55 font-mono">
                               {formatNumber(d.instructors)}
                             </td>
-                            <td className="text-right py-3 px-3 text-white/70 font-mono">
+                            <td className="text-right py-3 px-3 text-white/55 font-mono">
                               {formatNumber(d.newStudents)}
                             </td>
                             <td className="text-right py-3 px-3 text-amber-400 font-mono font-medium">

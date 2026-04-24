@@ -124,7 +124,7 @@ function TopThreeCard({
       badge: 'bg-gradient-to-br from-amber-400 to-yellow-600',
       icon: <Crown className="w-5 h-5 text-yellow-900" />,
       label: '冠军',
-      glow: 'shadow-[0_0_30px_rgba(251,191,36,0.3)]',
+      glow: '',
       border: 'border-amber-500/40',
       size: 'lg',
     },
@@ -132,7 +132,7 @@ function TopThreeCard({
       badge: 'bg-gradient-to-br from-slate-300 to-slate-500',
       icon: <Trophy className="w-5 h-5 text-slate-800" />,
       label: '亚军',
-      glow: 'shadow-[0_0_25px_rgba(148,163,184,0.25)]',
+      glow: '',
       border: 'border-slate-400/40',
       size: 'md',
     },
@@ -140,7 +140,7 @@ function TopThreeCard({
       badge: 'bg-gradient-to-br from-amber-600 to-amber-800',
       icon: <Medal className="w-5 h-5 text-amber-200" />,
       label: '季军',
-      glow: 'shadow-[0_0_25px_rgba(180,83,9,0.25)]',
+      glow: '',
       border: 'border-amber-700/40',
       size: 'md',
     },
@@ -330,7 +330,7 @@ export default function RankingsPage() {
   const restRankings = filteredRankings.slice(3);
 
   return (
-    <section className="relative min-h-screen py-20 overflow-hidden">
+    <section className="relative min-h-screen bg-[#0a0a0a] py-20 sm:py-28 overflow-hidden">
       {/* 背景装饰 */}
       <div className="absolute inset-0 pointer-events-none">
         <div
@@ -345,10 +345,10 @@ export default function RankingsPage() {
         <div className="absolute bottom-[-200px] left-[-200px] w-[500px] h-[500px] rounded-full bg-purple-600/8 blur-[100px]" />
       </div>
 
-      <div className="relative z-10 px-5 sm:px-8 max-w-5xl mx-auto">
+      <div className="relative z-10 px-6 max-w-5xl mx-auto">
         {/* 页面标题 */}
         <motion.div
-          className="text-center mb-8 sm:mb-10"
+          className="text-center mb-4"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -360,7 +360,7 @@ export default function RankingsPage() {
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
             <GradientText variant="gold">见证每一位高手的荣耀</GradientText>
           </h1>
-          <p className="text-text-secondary max-w-2xl mx-auto text-base sm:text-lg">
+          <p className="text-white/40 max-w-2xl mx-auto text-sm mb-12 sm:mb-16">
             多维度排名，全面展示领教员实力。带班数、学员数、讲师数、总收益，谁是最强王者？
           </p>
         </motion.div>
@@ -381,8 +381,8 @@ export default function RankingsPage() {
                   className={cn(
                     'flex items-center justify-center gap-2 px-4 py-3 rounded-xl border transition-all duration-200 text-sm font-medium',
                     activeDimension === dim.key
-                      ? 'border-purple-500/50 bg-purple-500/15 text-white shadow-[0_0_15px_rgba(139,92,246,0.2)]'
-                      : 'border-white/5 bg-white/[0.02] text-white/50 hover:border-white/15 hover:bg-white/[0.04] hover:text-white/70'
+                      ? 'border-purple-500/50 bg-purple-500/15 text-white'
+                      : 'border-white/[0.06] bg-white/[0.03] text-white/40 hover:border-white/[0.1] hover:bg-white/[0.04] hover:text-white/55'
                   )}
                 >
                   {dim.icon}
@@ -408,8 +408,8 @@ export default function RankingsPage() {
                 className={cn(
                   'flex items-center gap-2 px-5 py-2.5 rounded-full border transition-all duration-200 text-sm',
                   activeTier === tier.key
-                    ? 'border-amber-500/50 bg-amber-500/15 text-amber-300 shadow-[0_0_15px_rgba(245,158,11,0.15)]'
-                    : 'border-white/5 bg-white/[0.02] text-white/40 hover:border-white/15 hover:bg-white/[0.04] hover:text-white/60'
+                    ? 'border-amber-500/50 bg-amber-500/15 text-amber-300'
+                    : 'border-white/[0.06] bg-white/[0.03] text-white/40 hover:border-white/[0.1] hover:bg-white/[0.04] hover:text-white/55'
                 )}
               >
                 {tier.icon}
@@ -501,7 +501,7 @@ export default function RankingsPage() {
           <GlassCard hover={false} className="p-6">
             <div className="flex items-center justify-center gap-2 mb-4">
               <TrendingUp className="w-4 h-4 text-emerald-400" />
-              <span className="text-sm font-medium text-white/70">平台数据总览</span>
+              <span className="text-sm font-medium text-white/55">平台数据总览</span>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-5">
               <div className="text-center">

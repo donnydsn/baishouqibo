@@ -156,8 +156,8 @@ export default function WikiPage() {
             onClick={() => setSelectedTag(null)}
             className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
               selectedTag === null
-                ? 'bg-purple-500/20 text-purple-300 border border-purple-500/30 shadow-[0_0_12px_rgba(139,92,246,0.2)]'
-                : 'bg-white/5 text-white/50 border border-white/10 hover:border-white/20 hover:text-white/70'
+                ? 'bg-purple-500/15 text-purple-300/80 border border-purple-500/20'
+                : 'bg-white/[0.03] text-white/40 border border-white/[0.06] hover:border-white/[0.1] hover:text-white/55'
             }`}
           >
             全部
@@ -168,8 +168,8 @@ export default function WikiPage() {
               onClick={() => setSelectedTag(selectedTag === tag ? null : tag)}
               className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
                 selectedTag === tag
-                  ? 'bg-purple-500/20 text-purple-300 border border-purple-500/30 shadow-[0_0_12px_rgba(139,92,246,0.2)]'
-                  : 'bg-white/5 text-white/50 border border-white/10 hover:border-white/20 hover:text-white/70'
+                  ? 'bg-purple-500/15 text-purple-300/80 border border-purple-500/20'
+                  : 'bg-white/[0.03] text-white/40 border border-white/[0.06] hover:border-white/[0.1] hover:text-white/55'
               }`}
             >
               {tag}
@@ -266,13 +266,13 @@ export default function WikiPage() {
                           transition={{ duration: 0.3 }}
                           className="overflow-hidden"
                         >
-                          <div className="mt-5 pt-5 border-t border-white/10 px-2">
+                          <div className="mt-5 pt-5 border-t border-white/[0.06] px-2">
                             {/* 问题描述 */}
-                            <div className="mb-5 p-4 rounded-xl bg-white/[0.02] border border-white/5">
+                            <div className="mb-5 p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]">
                               <h4 className="text-white/60 text-xs font-medium uppercase tracking-wider mb-2">
                                 问题描述
                               </h4>
-                              <p className="text-white/70 text-sm leading-relaxed">{question.content}</p>
+                              <p className="text-white/55 text-sm leading-relaxed">{question.content}</p>
                             </div>
 
                             {/* 最佳回答 */}
@@ -284,7 +284,7 @@ export default function WikiPage() {
                                     最佳回答
                                   </h4>
                                 </div>
-                                <p className="text-white/70 text-sm leading-relaxed">
+                                <p className="text-white/55 text-sm leading-relaxed">
                                   {question.bestAnswer}
                                 </p>
                               </div>
@@ -352,17 +352,17 @@ export default function WikiPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: idx * 0.1 }}
-                  className="bg-white/[0.03] border border-white/5 rounded-xl p-4 text-center"
+                  className="bg-white/[0.03] border border-white/[0.06] rounded-xl p-4 text-center"
                 >
                   <span className="text-2xl mb-2 block">{item.icon}</span>
-                  <p className="text-white/80 text-sm font-medium mb-1">{item.action}</p>
+                  <p className="text-white/55 text-sm font-medium mb-1">{item.action}</p>
                   <p className="text-amber-400 text-sm font-bold mb-1">{item.points}</p>
                   <p className="text-text-tertiary text-xs">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
 
-            <div className="mt-6 pt-5 border-t border-white/5">
+            <div className="mt-6 pt-5 border-t border-white/[0.06]">
               <p className="text-text-tertiary text-xs leading-relaxed text-center">
                 积分可用于解锁高级课程内容、兑换专属福利、提升社区等级。更多玩法持续更新中...
               </p>
