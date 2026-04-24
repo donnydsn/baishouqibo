@@ -124,10 +124,10 @@ export default function WikiPage() {
         />
       </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 px-5 sm:px-8 max-w-5xl mx-auto">
         {/* 页面标题 */}
         <motion.div
-          className="text-center mb-12"
+          className="text-center mb-8 sm:mb-10"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -146,7 +146,7 @@ export default function WikiPage() {
 
         {/* 标签筛选 */}
         <motion.div
-          className="flex flex-wrap items-center gap-2 mb-8"
+          className="scroll-container flex items-center gap-2 mb-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.15 }}
@@ -178,7 +178,7 @@ export default function WikiPage() {
         </motion.div>
 
         {/* 问题列表 */}
-        <div className="space-y-4">
+        <div className="flex flex-col gap-4 sm:gap-5">
           <AnimatePresence mode="popLayout">
             {filteredQuestions.map((question, index) => {
               const isExpanded = expandedId === question.id;
@@ -192,7 +192,7 @@ export default function WikiPage() {
                   transition={{ duration: 0.35, delay: index * 0.05 }}
                 >
                   <GlassCard
-                    className="overflow-hidden"
+                    className="overflow-hidden !p-5 sm:!p-6"
                     onClick={() => setExpandedId(isExpanded ? null : question.id)}
                   >
                     {/* 问题头部 */}
@@ -266,9 +266,9 @@ export default function WikiPage() {
                           transition={{ duration: 0.3 }}
                           className="overflow-hidden"
                         >
-                          <div className="mt-5 pt-5 border-t border-white/10">
+                          <div className="mt-5 pt-5 border-t border-white/10 px-2">
                             {/* 问题描述 */}
-                            <div className="mb-5">
+                            <div className="mb-5 p-4 rounded-xl bg-white/[0.02] border border-white/5">
                               <h4 className="text-white/60 text-xs font-medium uppercase tracking-wider mb-2">
                                 问题描述
                               </h4>
@@ -339,7 +339,7 @@ export default function WikiPage() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
                 { action: '提出问题', points: '+2 积分', icon: '❓', desc: '每个有效问题' },
                 { action: '回答问题', points: '+5 积分', icon: '💬', desc: '每个有效回答' },

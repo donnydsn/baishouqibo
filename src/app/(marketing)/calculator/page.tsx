@@ -203,7 +203,7 @@ export default function CalculatorPage() {
   const currentLevelInfo = LEVELS.find((l) => l.level === selectedLevel)!;
 
   return (
-    <section className="relative min-h-screen py-20 overflow-hidden">
+    <section className="relative min-h-screen py-16 sm:py-20 overflow-hidden">
       {/* 背景装饰 */}
       <div className="absolute inset-0 pointer-events-none">
         <div
@@ -216,10 +216,10 @@ export default function CalculatorPage() {
         />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
         {/* 页面标题 */}
         <motion.div
-          className="text-center mb-12"
+          className="text-center mb-8 sm:mb-10"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -236,22 +236,22 @@ export default function CalculatorPage() {
         </motion.div>
 
         {/* 主体：左右布局 */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 lg:gap-8">
           {/* ========== 左侧：输入控制区 ========== */}
           <motion.div
-            className="lg:col-span-4 space-y-6"
+            className="lg:col-span-4 space-y-5 sm:space-y-6"
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             {/* 等级选择器 */}
-            <GlassCard hover={false} className="space-y-4">
+            <GlassCard hover={false} className="space-y-4 !p-5 sm:!p-6">
               <div className="flex items-center gap-2 mb-1">
                 <span className="text-lg">🎓</span>
                 <h3 className="text-white font-semibold text-lg">选择等级</h3>
               </div>
               <p className="text-text-tertiary text-sm">种子金越高，每轮收益基数越大</p>
-              <div className="grid grid-cols-1 gap-2">
+              <div className="grid grid-cols-1 gap-3">
                 {LEVELS.map((l) => (
                   <button
                     key={l.level}
@@ -292,13 +292,13 @@ export default function CalculatorPage() {
             </GlassCard>
 
             {/* 轮次选择器 */}
-            <GlassCard hover={false} className="space-y-4">
+            <GlassCard hover={false} className="space-y-4 !p-5 sm:!p-6">
               <div className="flex items-center gap-2 mb-1">
                 <span className="text-lg">⏱️</span>
                 <h3 className="text-white font-semibold text-lg">模拟周期</h3>
               </div>
               <p className="text-text-tertiary text-sm">选择要模拟的时间跨度</p>
-              <div className="grid grid-cols-2 gap-2">
+              <div className="grid grid-cols-2 gap-3">
                 {ROUNDS.map((r) => (
                   <button
                     key={r.period}
@@ -325,13 +325,13 @@ export default function CalculatorPage() {
             </GlassCard>
 
             {/* 速度选择器 */}
-            <GlassCard hover={false} className="space-y-4">
+            <GlassCard hover={false} className="space-y-4 !p-5 sm:!p-6">
               <div className="flex items-center gap-2 mb-1">
                 <span className="text-lg">🚀</span>
                 <h3 className="text-white font-semibold text-lg">裂变速度</h3>
               </div>
               <p className="text-text-tertiary text-sm">每轮同时带班的数量</p>
-              <div className="grid grid-cols-4 gap-2">
+              <div className="grid grid-cols-4 gap-3">
                 {SPEEDS.map((s) => (
                   <button
                     key={s.speed}
@@ -360,7 +360,7 @@ export default function CalculatorPage() {
             </GlassCard>
 
             {/* 模型说明 */}
-            <GlassCard hover={false} className="space-y-3">
+            <GlassCard hover={false} className="space-y-3 !p-5 sm:!p-6">
               <h4 className="text-white/80 font-medium text-sm">数学模型说明</h4>
               <div className="space-y-2 text-xs text-text-tertiary leading-relaxed">
                 <p>
@@ -385,20 +385,20 @@ export default function CalculatorPage() {
 
           {/* ========== 右侧：结果展示区 ========== */}
           <motion.div
-            className="lg:col-span-8 space-y-6"
+            className="lg:col-span-8 space-y-5 sm:space-y-6"
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             {/* 关键指标卡片 */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
               <motion.div
                 key={`invest-${selectedLevel}-${selectedPeriod}-${selectedSpeed}`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4 }}
               >
-                <GlassCard hover={false} className="text-center">
+                <GlassCard hover={false} className="text-center !p-5 sm:!p-6">
                   <p className="text-text-tertiary text-xs mb-2">总投资（种子金）</p>
                   <AnimatedCounter
                     value={result.totalInvestment}
@@ -414,7 +414,7 @@ export default function CalculatorPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.05 }}
               >
-                <GlassCard hover={false} glow className="text-center">
+                <GlassCard hover={false} glow className="text-center !p-5 sm:!p-6">
                   <p className="text-text-tertiary text-xs mb-2">总收益</p>
                   <AnimatedCounter
                     value={result.totalEarning}
@@ -430,7 +430,7 @@ export default function CalculatorPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.1 }}
               >
-                <GlassCard hover={false} className="text-center">
+                <GlassCard hover={false} className="text-center !p-5 sm:!p-6">
                   <p className="text-text-tertiary text-xs mb-2">投资回报率 ROI</p>
                   <AnimatedCounter
                     value={Math.round(result.roi)}
@@ -446,7 +446,7 @@ export default function CalculatorPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.15 }}
               >
-                <GlassCard hover={false} className="text-center">
+                <GlassCard hover={false} className="text-center !p-5 sm:!p-6">
                   <p className="text-text-tertiary text-xs mb-2">回本轮次</p>
                   {result.paybackRound > 0 ? (
                     <div className="flex items-center justify-center gap-1">
@@ -463,7 +463,7 @@ export default function CalculatorPage() {
             </div>
 
             {/* 收益概览条 */}
-            <GlassCard hover={false}>
+            <GlassCard hover={false} className="!p-5 sm:!p-6">
               <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
                 <div>
                   <h3 className="text-white font-semibold text-lg">收益概览</h3>
@@ -502,21 +502,23 @@ export default function CalculatorPage() {
               </div>
 
               {/* 累计收益面积图 */}
-              <div>
+              <div className="overflow-hidden">
                 <h4 className="text-white/70 text-sm font-medium mb-3">累计收益趋势</h4>
                 <CumulativeChart data={chartData} />
               </div>
             </GlassCard>
 
             {/* 分润构成柱状图 */}
-            <GlassCard hover={false}>
+            <GlassCard hover={false} className="!p-5 sm:!p-6">
               <h3 className="text-white font-semibold text-lg mb-1">每轮分润构成</h3>
               <p className="text-text-tertiary text-sm mb-4">各轮次收益来源明细</p>
+              <div className="overflow-hidden">
               <RoundBreakdownChart data={chartData} />
+              </div>
             </GlassCard>
 
             {/* 数据表格 */}
-            <GlassCard hover={false}>
+            <GlassCard hover={false} className="!p-5 sm:!p-6">
               <div className="flex items-center justify-between mb-4">
                 <div>
                   <h3 className="text-white font-semibold text-lg">轮次明细</h3>
@@ -528,16 +530,16 @@ export default function CalculatorPage() {
                 </div>
               </div>
 
-              <div className="overflow-x-auto -mx-6 px-6">
+              <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-white/10">
-                      <th className="text-left text-text-tertiary font-medium py-3 pr-4">轮次</th>
-                      <th className="text-right text-text-tertiary font-medium py-3 pr-4">领教员</th>
-                      <th className="text-right text-text-tertiary font-medium py-3 pr-4">新学员</th>
-                      <th className="text-right text-text-tertiary font-medium py-3 pr-4">当轮收益</th>
-                      <th className="text-right text-text-tertiary font-medium py-3 pr-4">累计收益</th>
-                      <th className="text-right text-text-tertiary font-medium py-3">团队规模</th>
+                      <th className="text-left text-text-tertiary font-medium py-3 px-3">轮次</th>
+                      <th className="text-right text-text-tertiary font-medium py-3 px-3">领教员</th>
+                      <th className="text-right text-text-tertiary font-medium py-3 px-3">新学员</th>
+                      <th className="text-right text-text-tertiary font-medium py-3 px-3">当轮收益</th>
+                      <th className="text-right text-text-tertiary font-medium py-3 px-3">累计收益</th>
+                      <th className="text-right text-text-tertiary font-medium py-3 px-3">团队规模</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -557,7 +559,7 @@ export default function CalculatorPage() {
                               isPayback && 'bg-emerald-500/5'
                             )}
                           >
-                            <td className="py-3 pr-4">
+                            <td className="py-3 px-3">
                               <div className="flex items-center gap-2">
                                 <span className="text-white/80 font-medium">第 {d.round} 轮</span>
                                 {isPayback && (
@@ -567,19 +569,19 @@ export default function CalculatorPage() {
                                 )}
                               </div>
                             </td>
-                            <td className="text-right py-3 pr-4 text-white/70 font-mono">
+                            <td className="text-right py-3 px-3 text-white/70 font-mono">
                               {formatNumber(d.instructors)}
                             </td>
-                            <td className="text-right py-3 pr-4 text-white/70 font-mono">
+                            <td className="text-right py-3 px-3 text-white/70 font-mono">
                               {formatNumber(d.newStudents)}
                             </td>
-                            <td className="text-right py-3 pr-4 text-amber-400 font-mono font-medium">
+                            <td className="text-right py-3 px-3 text-amber-400 font-mono font-medium">
                               {formatCurrency(d.totalEarning)}
                             </td>
-                            <td className="text-right py-3 pr-4 text-purple-300 font-mono font-medium">
+                            <td className="text-right py-3 px-3 text-purple-300 font-mono font-medium">
                               {formatCurrency(d.cumulativeEarning)}
                             </td>
-                            <td className="text-right py-3 text-cyan-400/80 font-mono">
+                            <td className="text-right py-3 px-3 text-cyan-400/80 font-mono">
                               {formatNumber(d.totalTeamSize)}
                             </td>
                           </motion.tr>

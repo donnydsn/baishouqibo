@@ -28,40 +28,40 @@ const missions = [
 
 export function MissionSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-20 sm:py-28 px-5 sm:px-8">
+      <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-14 sm:mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
             <GradientText variant="cyan">使命 · 愿景 · 价值观</GradientText>
           </h2>
-          <p className="text-white/50 text-lg">
+          <p className="text-white/40 text-base sm:text-lg">
             颠覆常识的创新思维，帮助普通人翻身逆袭
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
           {missions.map((mission, index) => {
             const Icon = mission.icon;
             return (
               <motion.div
                 key={mission.title}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
+                transition={{ duration: 0.5, delay: index * 0.12 }}
               >
-                <GlassCard className="h-full p-8 text-center">
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${mission.gradient} flex items-center justify-center mx-auto mb-6 shadow-lg`}>
-                    <Icon className="w-8 h-8 text-white" />
+                <GlassCard className="glass-card-no-hover h-full !p-7 sm:!p-8 text-center">
+                  <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${mission.gradient} flex items-center justify-center mx-auto mb-6`}>
+                    <Icon className="w-7 h-7 text-white" />
                   </div>
                   <h3 className="text-xl font-bold gradient-text mb-4">{mission.title}</h3>
-                  <p className="text-sm text-white/50 leading-relaxed">{mission.content}</p>
+                  <p className="text-sm text-white/40 leading-[1.8]">{mission.content}</p>
                 </GlassCard>
               </motion.div>
             );

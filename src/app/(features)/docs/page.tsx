@@ -793,7 +793,7 @@ function Sidebar({
                   transition={{ duration: 0.2 }}
                   className="overflow-hidden"
                 >
-                  <div className="ml-4 pl-3 border-l border-white/8 space-y-0.5 mt-1 mb-2">
+                  <div className="ml-4 pl-3 border-l border-white/8 space-y-1 mt-1 mb-2">
                     {section.docs.map((doc) => (
                       <button
                         key={doc.id}
@@ -802,7 +802,7 @@ function Sidebar({
                           'flex items-center gap-2 w-full px-3 py-2 rounded-lg text-sm transition-all duration-200',
                           activeDocId === doc.id
                             ? 'text-purple-300 bg-purple-500/10 border border-purple-500/20'
-                            : 'text-white/40 hover:text-white/60 hover:bg-white/[0.03]'
+                            : 'text-white/40 hover:text-white/80 hover:bg-white/[0.06]'
                         )}
                       >
                         <FileText className="w-3.5 h-3.5 flex-shrink-0" />
@@ -881,7 +881,7 @@ export default function DocsPage() {
         />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
         {/* 页面标题 */}
         <motion.div
           className="text-center mb-12"
@@ -905,7 +905,7 @@ export default function DocsPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
           {/* 左侧目录树 */}
           <motion.div
-            className="lg:col-span-4 xl:col-span-3"
+            className="lg:col-span-4 xl:col-span-3 w-56 sm:w-64"
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -940,7 +940,7 @@ export default function DocsPage() {
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <GlassCard hover={false} className="min-h-[500px]">
+                  <GlassCard hover={false} className="min-h-[500px] !p-6 sm:!p-8">
                     {/* 面包屑 */}
                     <div className="flex items-center gap-2 mb-6 pb-4 border-b border-white/10">
                       <Badge variant={activeSection.badgeVariant}>
@@ -957,7 +957,7 @@ export default function DocsPage() {
                     </h2>
 
                     {/* 文档内容 */}
-                    <div className="text-base">
+                    <div className="text-base leading-[1.8]">
                       {activeDoc.content}
                     </div>
                   </GlassCard>

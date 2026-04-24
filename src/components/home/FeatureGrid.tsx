@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { GradientText } from '@/components/ui/GradientText';
-import { Newspaper, Trophy, Rocket, Calculator, BookOpen, Brain } from 'lucide-react';
+import { Newspaper, Trophy, Rocket, Calculator, BookOpen, Brain, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 const features = [
@@ -55,73 +55,67 @@ const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
+    transition: { staggerChildren: 0.08 },
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
 export function FeatureGrid() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-20 sm:py-28 px-5 sm:px-8">
+      <div className="max-w-5xl mx-auto">
         {/* Section Title */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-14 sm:mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
             <GradientText>六大核心功能</GradientText>
           </h2>
-          <p className="text-white/50 text-lg max-w-2xl mx-auto">
+          <p className="text-white/40 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
             营销获客 + 会员管理，一站式赋能你的指数增长之路
           </p>
         </motion.div>
 
-        {/* Feature Grid - 2 columns x 3 rows */}
+        {/* Feature Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6"
         >
           {features.map((feature) => {
             const Icon = feature.icon;
             return (
               <motion.div key={feature.title} variants={itemVariants}>
-                <Link href={feature.href}>
-                  <GlassCard className="group h-full p-8 hover:translate-y-[-6px] hover:shadow-[0_8px_40px_rgba(139,92,246,0.15)]">
-                    <div className="flex items-start gap-5">
+                <Link href={feature.href} className="block">
+                  <GlassCard className="group h-full !p-6 sm:!p-8 hover:!translate-y-[-4px] hover:!shadow-[0_12px_40px_rgba(139,92,246,0.12)]">
+                    <div className="flex items-center gap-4 sm:gap-5">
                       {/* Icon */}
-                      <div className={`shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center shadow-lg`}>
-                        <Icon className="w-7 h-7 text-white" />
+                      <div className={`shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center`}>
+                        <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                       </div>
 
                       {/* Content */}
                       <div className="flex-1 min-w-0">
-                        <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-purple-300 transition-colors">
+                        <h3 className="text-lg sm:text-xl font-semibold text-white mb-1.5 group-hover:text-purple-300 transition-colors">
                           {feature.title}
                         </h3>
-                        <p className="text-sm text-white/50 leading-relaxed">
+                        <p className="text-sm text-white/40 leading-relaxed line-clamp-2">
                           {feature.description}
                         </p>
                       </div>
 
                       {/* Arrow */}
-                      <div className="shrink-0 self-center opacity-0 group-hover:opacity-100 transition-opacity">
-                        <svg className="w-5 h-5 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </div>
+                      <ArrowRight className="shrink-0 w-4 h-4 text-white/20 group-hover:text-white/50 group-hover:translate-x-1 transition-all" />
                     </div>
                   </GlassCard>
                 </Link>

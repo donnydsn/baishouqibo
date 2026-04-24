@@ -157,7 +157,7 @@ function StageCard({ stage, index }: { stage: RoadmapStage; index: number }) {
   const isLeft = index % 2 === 0;
 
   return (
-    <div className="relative flex items-start gap-6 md:gap-10">
+    <div className="relative flex items-start gap-6 sm:gap-10">
       {/* 左侧内容 / 占位 */}
       <div className={`hidden md:block w-1/2 ${isLeft ? '' : 'order-last'}`}>
         {isLeft ? (
@@ -169,7 +169,7 @@ function StageCard({ stage, index }: { stage: RoadmapStage; index: number }) {
           >
             <GlassCard
               hover={false}
-              className="relative overflow-hidden group"
+              className="relative overflow-hidden group !p-6 sm:!p-8"
             >
               {/* 卡片顶部光效 */}
               <div
@@ -210,7 +210,7 @@ function StageCard({ stage, index }: { stage: RoadmapStage; index: number }) {
                       <ChevronRight className="w-3 h-3" />
                       所需条件
                     </p>
-                    <div className="space-y-1.5">
+                    <div className="space-y-2.5">
                       {stage.conditions.map((condition, i) => (
                         <div key={i} className="flex items-start gap-2 text-sm text-white/60">
                           <CheckCircle2 className="w-3.5 h-3.5 mt-0.5 text-emerald-400/60 flex-shrink-0" />
@@ -226,7 +226,7 @@ function StageCard({ stage, index }: { stage: RoadmapStage; index: number }) {
                       <ChevronRight className="w-3 h-3" />
                       权益说明
                     </p>
-                    <div className="space-y-1.5">
+                    <div className="space-y-2.5">
                       {stage.benefits.map((benefit, i) => (
                         <div key={i} className="flex items-start gap-2 text-sm text-white/60">
                           <Star className="w-3.5 h-3.5 mt-0.5 text-amber-400/60 flex-shrink-0" />
@@ -277,7 +277,7 @@ function StageCard({ stage, index }: { stage: RoadmapStage; index: number }) {
           >
             <GlassCard
               hover={false}
-              className="relative overflow-hidden group"
+              className="relative overflow-hidden group !p-6 sm:!p-8"
             >
               {/* 卡片顶部光效 */}
               <div
@@ -318,7 +318,7 @@ function StageCard({ stage, index }: { stage: RoadmapStage; index: number }) {
                       <ChevronRight className="w-3 h-3" />
                       所需条件
                     </p>
-                    <div className="space-y-1.5">
+                    <div className="space-y-2.5">
                       {stage.conditions.map((condition, i) => (
                         <div key={i} className="flex items-start gap-2 text-sm text-white/60">
                           <CheckCircle2 className="w-3.5 h-3.5 mt-0.5 text-emerald-400/60 flex-shrink-0" />
@@ -334,7 +334,7 @@ function StageCard({ stage, index }: { stage: RoadmapStage; index: number }) {
                       <ChevronRight className="w-3 h-3" />
                       权益说明
                     </p>
-                    <div className="space-y-1.5">
+                    <div className="space-y-2.5">
                       {stage.benefits.map((benefit, i) => (
                         <div key={i} className="flex items-start gap-2 text-sm text-white/60">
                           <Star className="w-3.5 h-3.5 mt-0.5 text-amber-400/60 flex-shrink-0" />
@@ -360,7 +360,7 @@ function StageCard({ stage, index }: { stage: RoadmapStage; index: number }) {
         viewport={{ once: true, margin: '-60px' }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
       >
-        <GlassCard hover={false} className="relative overflow-hidden">
+        <GlassCard hover={false} className="relative overflow-hidden !p-6 sm:!p-8">
           <div
             className="absolute top-0 left-0 right-0 h-1 opacity-60"
             style={{
@@ -390,7 +390,7 @@ function StageCard({ stage, index }: { stage: RoadmapStage; index: number }) {
               </p>
               <div className="mb-2">
                 <p className="text-[10px] font-medium text-text-tertiary mb-1.5">所需条件</p>
-                <div className="space-y-1">
+                <div className="space-y-2.5">
                   {stage.conditions.map((condition, i) => (
                     <div key={i} className="flex items-start gap-1.5 text-xs text-white/60">
                       <CheckCircle2 className="w-3 h-3 mt-0.5 text-emerald-400/60 flex-shrink-0" />
@@ -401,7 +401,7 @@ function StageCard({ stage, index }: { stage: RoadmapStage; index: number }) {
               </div>
               <div>
                 <p className="text-[10px] font-medium text-text-tertiary mb-1.5">权益说明</p>
-                <div className="space-y-1">
+                <div className="space-y-2.5">
                   {stage.benefits.map((benefit, i) => (
                     <div key={i} className="flex items-start gap-1.5 text-xs text-white/60">
                       <Star className="w-3 h-3 mt-0.5 text-amber-400/60 flex-shrink-0" />
@@ -424,7 +424,7 @@ function StageCard({ stage, index }: { stage: RoadmapStage; index: number }) {
 
 export default function RoadmapPage() {
   return (
-    <section className="relative min-h-screen py-20 overflow-hidden">
+    <section className="relative min-h-screen py-16 sm:py-20 overflow-hidden">
       {/* 背景装饰 */}
       <div className="absolute inset-0 pointer-events-none">
         <div
@@ -440,10 +440,10 @@ export default function RoadmapPage() {
         <div className="absolute bottom-[-200px] right-[-200px] w-[500px] h-[500px] rounded-full bg-cyan-600/10 blur-[100px]" />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-8">
         {/* 页面标题 */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -463,9 +463,9 @@ export default function RoadmapPage() {
         {/* 时间线 */}
         <div className="relative">
           {/* 垂直连接线（桌面端） */}
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2">
+          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2">
             <motion.div
-              className="w-full bg-gradient-to-b from-purple-500/40 via-cyan-500/40 to-amber-500/40"
+              className="w-full bg-gradient-to-b from-purple-500/60 via-cyan-500/60 to-amber-500/60"
               initial={{ height: 0 }}
               whileInView={{ height: '100%' }}
               viewport={{ once: true }}
@@ -474,9 +474,9 @@ export default function RoadmapPage() {
           </div>
 
           {/* 垂直连接线（移动端） */}
-          <div className="md:hidden absolute left-6 top-0 bottom-0 w-px">
+          <div className="md:hidden absolute left-6 top-0 bottom-0 w-0.5">
             <motion.div
-              className="w-full bg-gradient-to-b from-purple-500/40 via-cyan-500/40 to-amber-500/40"
+              className="w-full bg-gradient-to-b from-purple-500/60 via-cyan-500/60 to-amber-500/60"
               initial={{ height: 0 }}
               whileInView={{ height: '100%' }}
               viewport={{ once: true }}
@@ -485,7 +485,7 @@ export default function RoadmapPage() {
           </div>
 
           {/* 阶段列表 */}
-          <div className="space-y-8 md:space-y-12">
+          <div className="space-y-8 sm:space-y-12">
             {stages.map((stage, index) => (
               <StageCard key={stage.id} stage={stage} index={index} />
             ))}
@@ -494,7 +494,7 @@ export default function RoadmapPage() {
 
         {/* 底部CTA */}
         <motion.div
-          className="text-center mt-16"
+          className="text-center mt-16 sm:mt-20"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

@@ -360,3 +360,107 @@ a:hover {
 .animate-pulse-glow {
   animation: pulse-glow 2s ease-in-out infinite;
 }
+
+/* ============================================
+   全局排版优化 - 增加呼吸感和高级感
+   ============================================ */
+
+/* 页面容器统一约束 */
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (min-width: 768px) {
+  .page-container {
+    padding: 0 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-container {
+    padding: 0 48px;
+  }
+}
+
+/* 区块间距标准化 */
+.section-padding {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+/* 区块标题统一样式 */
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 2.5rem;
+  }
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+@media (min-width: 768px) {
+  .section-subtitle {
+    font-size: 1.125rem;
+  }
+}
+
+/* 毛玻璃卡片优化 - 增加内边距和层次感 */
+.glass-card {
+  padding: 24px;
+}
+
+@media (min-width: 768px) {
+  .glass-card {
+    padding: 32px;
+  }
+}
+
+/* 禁止文字选中时的毛玻璃hover效果（避免误触） */
+.glass-card-no-hover:hover {
+  transform: none;
+  border-color: var(--glass-border);
+  box-shadow: var(--shadow-glass);
+}
+
+/* 滚动容器 - 用于标签栏等 */
+.scroll-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* 优化文字可读性 */
+body {
+  font-size: 15px;
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+}

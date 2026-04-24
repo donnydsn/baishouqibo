@@ -268,7 +268,7 @@ function RankingRow({
     >
       <GlassCard
         hover={false}
-        className="flex items-center gap-4 py-3 px-4"
+        className="flex items-center gap-4 py-3 sm:py-4 px-5 sm:px-6"
       >
         {/* 排名 */}
         <div className="w-8 text-center flex-shrink-0">
@@ -345,10 +345,10 @@ export default function RankingsPage() {
         <div className="absolute bottom-[-200px] left-[-200px] w-[500px] h-[500px] rounded-full bg-purple-600/8 blur-[100px]" />
       </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 px-5 sm:px-8 max-w-5xl mx-auto">
         {/* 页面标题 */}
         <motion.div
-          className="text-center mb-12"
+          className="text-center mb-8 sm:mb-10"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -373,7 +373,7 @@ export default function RankingsPage() {
           transition={{ duration: 0.5, delay: 0.1 }}
         >
           <GlassCard hover={false} className="p-2">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+            <div className="scroll-container grid grid-cols-2 md:grid-cols-4 gap-2">
               {dimensions.map((dim) => (
                 <button
                   key={dim.key}
@@ -400,7 +400,7 @@ export default function RankingsPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <div className="flex items-center justify-center gap-3">
+          <div className="scroll-container flex items-center gap-2">
             {tiers.map((tier) => (
               <button
                 key={tier.key}
@@ -439,7 +439,7 @@ export default function RankingsPage() {
               <>
                 {/* 前三名特殊展示 */}
                 {topThree.length > 0 && (
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-8">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-8">
                     {/* 桌面端：亚军 - 冠军 - 季军 */}
                     {/* 移动端：冠军 - 亚军 - 季军 */}
                     <div className="hidden md:block">
@@ -503,7 +503,7 @@ export default function RankingsPage() {
               <TrendingUp className="w-4 h-4 text-emerald-400" />
               <span className="text-sm font-medium text-white/70">平台数据总览</span>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-5">
               <div className="text-center">
                 <AnimatedCounter
                   value={mockRankings.reduce((sum, r) => sum + r.classCount, 0)}

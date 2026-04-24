@@ -15,9 +15,9 @@ const stats = [
 
 export function StatsBar() {
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+    <section className="py-16 sm:py-20 px-5 sm:px-8">
+      <div className="max-w-5xl mx-auto">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
@@ -26,8 +26,8 @@ export function StatsBar() {
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <GlassCard className="text-center py-8">
-                <div className="text-3xl md:text-4xl font-bold gradient-text-gold mb-2">
+              <GlassCard className="glass-card-no-hover text-center py-8 sm:py-10">
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold gradient-text-gold mb-3">
                   <AnimatedCounter
                     value={stat.value}
                     duration={2000}
@@ -36,7 +36,7 @@ export function StatsBar() {
                     formatFn={stat.formatFn}
                   />
                 </div>
-                <div className="text-sm text-white/50">{stat.label}</div>
+                <div className="text-xs sm:text-sm text-white/40 tracking-wider">{stat.label}</div>
               </GlassCard>
             </motion.div>
           ))}

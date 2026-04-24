@@ -61,7 +61,7 @@ function NewsCard({ item, index }: { item: NewsItem; index: number }) {
         hover={true}
         glow={expanded}
         onClick={() => setExpanded(!expanded)}
-        className="group relative overflow-hidden"
+        className="group relative overflow-hidden !p-5 sm:!p-6"
       >
         {/* 悬停发光效果 */}
         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
@@ -104,7 +104,7 @@ function NewsCard({ item, index }: { item: NewsItem; index: number }) {
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: 'auto' }}
                 exit={{ opacity: 0, height: 0 }}
-                transition={{ duration: 0.3, ease: 'easeInOut' }}
+                transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
                 className="overflow-hidden"
               >
                 <div className="pt-3 border-t border-white/10">
@@ -162,10 +162,10 @@ export default function NewsPage() {
         />
       </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 px-5 sm:px-8 max-w-5xl mx-auto">
         {/* 页面标题 */}
         <motion.div
-          className="text-center mb-12"
+          className="text-center mb-8 sm:mb-10"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -184,7 +184,7 @@ export default function NewsPage() {
 
         {/* 标签筛选栏 */}
         <motion.div
-          className="flex flex-wrap items-center justify-center gap-3 mb-10"
+          className="scroll-container flex items-center gap-2 mb-10"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -235,7 +235,7 @@ export default function NewsPage() {
         </motion.div>
 
         {/* 动态卡片列表 */}
-        <div className="space-y-4">
+        <div className="flex flex-col gap-4 sm:gap-5">
           <AnimatePresence mode="popLayout">
             {filteredNews.map((item, index) => (
               <NewsCard key={item.id} item={item} index={index} />
