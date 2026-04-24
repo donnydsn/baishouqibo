@@ -118,7 +118,7 @@ const staggerContainer = {
 
 export default function AboutPage() {
   return (
-    <section className="relative min-h-screen py-20 overflow-hidden">
+    <section className="relative min-h-screen bg-[#0a0a0a] py-20 sm:py-28 overflow-hidden">
       {/* 背景装饰 */}
       <div className="absolute inset-0 pointer-events-none">
         <div
@@ -131,7 +131,7 @@ export default function AboutPage() {
         />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-5xl mx-auto px-6">
         {/* ==============================
             1. 项目简介
            ============================== */}
@@ -145,7 +145,7 @@ export default function AboutPage() {
             <Sparkles className="w-3.5 h-3.5 mr-1.5" />
             关于白手启播
           </Badge>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+          <h1 className="text-3xl sm:text-4xl font-bold mb-6">
             <GradientText>让每个人都能在 AI 时代找到自己的位置</GradientText>
           </h1>
 
@@ -157,7 +157,7 @@ export default function AboutPage() {
                 </div>
                 <h2 className="text-white font-semibold text-xl">白手启播是什么？</h2>
               </div>
-              <div className="space-y-4 text-white/60 text-sm sm:text-base leading-relaxed">
+              <div className="space-y-4 text-white/55 text-sm sm:text-base leading-relaxed">
                 <p>
                   <span className="text-white/90 font-medium">白手启播</span>
                   是一个创新的「以教代学」直播培训平台。我们的核心理念是：不需要你是直播专家，只要愿意学习和分享，就能在教别人的过程中快速掌握直播技能。
@@ -194,10 +194,10 @@ export default function AboutPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4">
               <GradientText variant="cyan">为什么选择我们</GradientText>
             </h2>
-            <p className="text-white/50 text-lg">四大核心优势，颠覆传统直播培训模式</p>
+            <p className="text-white/40 text-sm">四大核心优势，颠覆传统直播培训模式</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -217,7 +217,7 @@ export default function AboutPage() {
                       <Icon className="w-7 h-7 text-white" />
                     </div>
                     <h3 className="text-xl font-bold text-white mb-3">{adv.title}</h3>
-                    <p className="text-white/50 text-sm leading-relaxed">{adv.description}</p>
+                    <p className="text-white/55 text-sm leading-relaxed">{adv.description}</p>
                   </GlassCard>
                 </motion.div>
               );
@@ -242,10 +242,10 @@ export default function AboutPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4">
               <GradientText variant="gold">适合人群</GradientText>
             </h2>
-            <p className="text-white/50 text-lg">无论你是谁，这里都有属于你的位置</p>
+            <p className="text-white/40 text-sm">无论你是谁，这里都有属于你的位置</p>
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -267,7 +267,7 @@ export default function AboutPage() {
                       </div>
                       <div className="flex-1 min-w-0">
                         <h4 className="text-white font-semibold text-sm mb-1">{audience.label}</h4>
-                        <p className="text-text-tertiary text-xs leading-relaxed">{audience.desc}</p>
+                        <p className="text-white/30 text-xs leading-relaxed">{audience.desc}</p>
                       </div>
                     </div>
                   </GlassCard>
@@ -294,10 +294,10 @@ export default function AboutPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4">
               <GradientText>核心数据</GradientText>
             </h2>
-            <p className="text-white/50 text-lg">用数字说话</p>
+            <p className="text-white/40 text-sm">用数字说话</p>
           </motion.div>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
@@ -319,7 +319,7 @@ export default function AboutPage() {
                     />
                   </div>
                   <div className="text-white font-medium text-sm mb-1">{stat.label}</div>
-                  <div className="text-text-tertiary text-xs">{stat.sublabel}</div>
+                  <div className="text-white/30 text-xs">{stat.sublabel}</div>
                 </GlassCard>
               </motion.div>
             ))}
@@ -342,10 +342,10 @@ export default function AboutPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4">
               <GradientText variant="cyan">联系我们</GradientText>
             </h2>
-            <p className="text-white/50 text-lg">期待与你同行，共创未来</p>
+            <p className="text-white/40 text-sm">期待与你同行，共创未来</p>
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
@@ -360,7 +360,7 @@ export default function AboutPage() {
                   <MessageCircle className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="text-white font-semibold text-lg mb-2">微信公众号</h3>
-                <p className="text-text-tertiary text-sm mb-4">关注公众号获取最新动态和课程信息</p>
+                <p className="text-white/30 text-sm mb-4">关注公众号获取最新动态和课程信息</p>
                 <Badge variant="success">白手启播官方</Badge>
               </GlassCard>
             </motion.div>
@@ -376,7 +376,7 @@ export default function AboutPage() {
                   <Mail className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="text-white font-semibold text-lg mb-2">合作邮箱</h3>
-                <p className="text-text-tertiary text-sm mb-4">商务合作、媒体咨询、讲师申请</p>
+                <p className="text-white/30 text-sm mb-4">商务合作、媒体咨询、讲师申请</p>
                 <Badge variant="primary">contact@baishouqibo.com</Badge>
               </GlassCard>
             </motion.div>
@@ -395,7 +395,7 @@ export default function AboutPage() {
                 <Rocket className="w-5 h-5 text-amber-400" />
                 <h3 className="text-white font-semibold text-lg">准备好开始了吗？</h3>
               </div>
-              <p className="text-text-secondary text-sm mb-6">
+              <p className="text-white/40 text-sm mb-6">
                 7天零基础训练营，7天无理由退全款，零风险开启你的直播之路
               </p>
               <div className="flex flex-wrap items-center justify-center gap-3">

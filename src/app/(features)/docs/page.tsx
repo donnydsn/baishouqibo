@@ -53,17 +53,17 @@ const docSections: DocSection[] = [
         title: '白手启播是什么',
         content: (
           <div className="space-y-4">
-            <p className="text-text-secondary leading-relaxed">
+            <p className="text-white/40 leading-relaxed">
               <span className="text-white font-medium">白手启播</span>是一个以「以教代学、指数变现」为核心的直播知识分享平台。
               我们致力于帮助普通人零成本、零风险地开启直播之路，通过教会他人来实现自我成长和财富增长。
             </p>
-            <p className="text-text-secondary leading-relaxed">
+            <p className="text-white/40 leading-relaxed">
               平台采用独特的「1 带 9 出 3」裂变模型，每位领教员每轮带 9 名学员，其中 3 名可孵化为新领教员，
               形成指数级的团队增长。通过分润体系，参与者可以从带班课酬、分享销酬和传承激励三个维度获得收益。
             </p>
             <div className="glass-card p-4 mt-4">
               <h4 className="text-white font-medium mb-2">核心理念</h4>
-              <ul className="space-y-2 text-text-secondary text-sm">
+              <ul className="space-y-2 text-white/40 text-sm">
                 <li className="flex items-start gap-2">
                   <span className="text-purple-400 mt-0.5">&#x2022;</span>
                   <span>纯聊天知识分享，不卖货不卖课，全然利他</span>
@@ -90,7 +90,7 @@ const docSections: DocSection[] = [
         title: '为什么选择白手启播',
         content: (
           <div className="space-y-4">
-            <p className="text-text-secondary leading-relaxed">
+            <p className="text-white/40 leading-relaxed">
               在众多直播培训平台中，白手启播凭借以下独特优势脱颖而出：
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -104,7 +104,7 @@ const docSections: DocSection[] = [
               ].map((item) => (
                 <div key={item.label} className="glass-card p-4">
                   <h4 className={cn('font-medium mb-1', item.color)}>{item.label}</h4>
-                  <p className="text-text-tertiary text-sm">{item.desc}</p>
+                  <p className="text-white/30 text-sm">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -116,7 +116,7 @@ const docSections: DocSection[] = [
         title: '适合什么人',
         content: (
           <div className="space-y-4">
-            <p className="text-text-secondary leading-relaxed">
+            <p className="text-white/40 leading-relaxed">
               白手启播适合以下人群：
             </p>
             <div className="space-y-3">
@@ -151,7 +151,7 @@ const docSections: DocSection[] = [
                   <span className="text-xl mt-0.5">{item.icon}</span>
                   <div>
                     <h4 className="text-white font-medium text-sm mb-1">{item.title}</h4>
-                    <p className="text-text-tertiary text-sm leading-relaxed">{item.desc}</p>
+                    <p className="text-white/30 text-sm leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -172,7 +172,7 @@ const docSections: DocSection[] = [
         title: '如何加入',
         content: (
           <div className="space-y-4">
-            <p className="text-text-secondary leading-relaxed">
+            <p className="text-white/40 leading-relaxed">
               加入白手启播非常简单，只需以下几步：
             </p>
             <div className="space-y-4">
@@ -190,7 +190,7 @@ const docSections: DocSection[] = [
                   </div>
                   <div>
                     <h4 className="text-white font-medium mb-1">{item.title}</h4>
-                    <p className="text-text-tertiary text-sm leading-relaxed">{item.desc}</p>
+                    <p className="text-white/30 text-sm leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -203,10 +203,10 @@ const docSections: DocSection[] = [
         title: '私域公开课',
         content: (
           <div className="space-y-4">
-            <p className="text-text-secondary leading-relaxed">
+            <p className="text-white/40 leading-relaxed">
               私域公开课是了解白手启播的第一步，也是最重要的一步。在公开课中，你将：
             </p>
-            <ul className="space-y-2 text-text-secondary text-sm">
+            <ul className="space-y-2 text-white/40 text-sm">
               <li className="flex items-start gap-2">
                 <span className="text-cyan-400 mt-0.5">&#x2713;</span>
                 <span>了解白手启播的创立背景和发展历程</span>
@@ -230,7 +230,7 @@ const docSections: DocSection[] = [
             </ul>
             <div className="glass-card p-4 mt-4">
               <h4 className="text-amber-300 font-medium mb-2">温馨提示</h4>
-              <p className="text-text-tertiary text-sm">
+              <p className="text-white/30 text-sm">
                 公开课完全免费，不收取任何费用。我们建议你在报名训练营前，务必先参加公开课，
                 充分了解平台后再做决定。理性参与，是对自己负责。
               </p>
@@ -243,7 +243,7 @@ const docSections: DocSection[] = [
         title: '7天训练营',
         content: (
           <div className="space-y-4">
-            <p className="text-text-secondary leading-relaxed">
+            <p className="text-white/40 leading-relaxed">
               7天训练营是白手启播的核心培训环节，通过系统化的课程安排，帮助学员快速掌握直播技能和带班能力。
             </p>
             <div className="glass-card p-4">
@@ -251,23 +251,23 @@ const docSections: DocSection[] = [
               <div className="grid grid-cols-2 gap-3">
                 <div className="text-center p-3 rounded-lg bg-white/[0.03]">
                   <p className="text-2xl font-bold gradient-text">7</p>
-                  <p className="text-text-tertiary text-xs mt-1">天系统培训</p>
+                  <p className="text-white/30 text-xs mt-1">天系统培训</p>
                 </div>
                 <div className="text-center p-3 rounded-lg bg-white/[0.03]">
                   <p className="text-2xl font-bold gradient-text-gold">9</p>
-                  <p className="text-text-tertiary text-xs mt-1">人小班教学</p>
+                  <p className="text-white/30 text-xs mt-1">人小班教学</p>
                 </div>
                 <div className="text-center p-3 rounded-lg bg-white/[0.03]">
                   <p className="text-2xl font-bold gradient-text-cyan">1v1</p>
-                  <p className="text-text-tertiary text-xs mt-1">导师辅导</p>
+                  <p className="text-white/30 text-xs mt-1">导师辅导</p>
                 </div>
                 <div className="text-center p-3 rounded-lg bg-white/[0.03]">
                   <p className="text-2xl font-bold text-emerald-400">100%</p>
-                  <p className="text-text-tertiary text-xs mt-1">实战导向</p>
+                  <p className="text-white/30 text-xs mt-1">实战导向</p>
                 </div>
               </div>
             </div>
-            <p className="text-text-secondary leading-relaxed">
+            <p className="text-white/40 leading-relaxed">
               训练营期间，学员需要完成每日课程学习、实操练习和作业提交。领教员会全程陪伴，
               及时反馈和指导。完成所有课程并达到结业标准的学员，将获得结业证书，
               并有资格申请成为认证领教员。
@@ -288,7 +288,7 @@ const docSections: DocSection[] = [
         title: '收益规则详解',
         content: (
           <div className="space-y-4">
-            <p className="text-text-secondary leading-relaxed">
+            <p className="text-white/40 leading-relaxed">
               白手启播的分润体系设计公平透明，确保每位参与者都能获得合理的回报。总收益的 80% 分配给参与者，
               20% 用于平台运营维护。
             </p>
@@ -329,7 +329,7 @@ const docSections: DocSection[] = [
                   <div className="w-full h-1.5 rounded-full bg-white/5 mb-2">
                     <div className={cn('h-full rounded-full', item.color)} style={{ width: item.percentage }} />
                   </div>
-                  <p className="text-text-tertiary text-sm">{item.desc}</p>
+                  <p className="text-white/30 text-sm">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -341,7 +341,7 @@ const docSections: DocSection[] = [
         title: '传承激励说明',
         content: (
           <div className="space-y-4">
-            <p className="text-text-secondary leading-relaxed">
+            <p className="text-white/40 leading-relaxed">
               传承激励是白手启播分润体系中最具特色的部分，它鼓励领教员用心培养下一代领教员，
               形成良性的师徒传承关系。
             </p>
@@ -352,26 +352,26 @@ const docSections: DocSection[] = [
                   <div className="w-10 h-10 rounded-full bg-purple-500/30 flex items-center justify-center text-purple-300 font-bold">1</div>
                   <div>
                     <p className="text-white text-sm font-medium">一代传承</p>
-                    <p className="text-text-tertiary text-xs">你直接培养的领教员收益的 10%</p>
+                    <p className="text-white/30 text-xs">你直接培养的领教员收益的 10%</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 p-3 rounded-lg bg-cyan-500/10 border border-cyan-500/20">
                   <div className="w-10 h-10 rounded-full bg-cyan-500/30 flex items-center justify-center text-cyan-300 font-bold">2</div>
                   <div>
                     <p className="text-white text-sm font-medium">二代传承</p>
-                    <p className="text-text-tertiary text-xs">你徒弟培养的领教员收益的 5%</p>
+                    <p className="text-white/30 text-xs">你徒弟培养的领教员收益的 5%</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 p-3 rounded-lg bg-amber-500/10 border border-amber-500/20">
                   <div className="w-10 h-10 rounded-full bg-amber-500/30 flex items-center justify-center text-amber-300 font-bold">3</div>
                   <div>
                     <p className="text-white text-sm font-medium">三代传承</p>
-                    <p className="text-text-tertiary text-xs">你徒孙培养的领教员收益的 3%</p>
+                    <p className="text-white/30 text-xs">你徒孙培养的领教员收益的 3%</p>
                   </div>
                 </div>
               </div>
             </div>
-            <p className="text-text-tertiary text-sm">
+            <p className="text-white/30 text-sm">
               注：传承激励最多计算到第三代，超过三代不再享受传承收益。传承激励不影响被传承人的正常收益。
             </p>
           </div>
@@ -382,7 +382,7 @@ const docSections: DocSection[] = [
         title: '等级与种子金',
         content: (
           <div className="space-y-4">
-            <p className="text-text-secondary leading-relaxed">
+            <p className="text-white/40 leading-relaxed">
               白手启播设有多个等级，不同等级对应不同的种子金和收益基数。等级越高，
               每轮的收益基数越大，但需要的投入也相应增加。
             </p>
@@ -401,7 +401,7 @@ const docSections: DocSection[] = [
                     </div>
                     <div>
                       <p className="text-white text-sm font-medium">{item.name}</p>
-                      <p className="text-text-tertiary text-xs">{item.desc}</p>
+                      <p className="text-white/30 text-xs">{item.desc}</p>
                     </div>
                   </div>
                   <span className={cn('font-mono font-semibold text-sm', item.color)}>{item.seed}</span>
@@ -410,7 +410,7 @@ const docSections: DocSection[] = [
             </div>
             <div className="glass-card p-4 mt-4">
               <h4 className="text-amber-300 font-medium mb-2">温馨提示</h4>
-              <p className="text-text-tertiary text-sm">
+              <p className="text-white/30 text-sm">
                 请根据自身经济情况理性选择等级。等级越高收益基数越大，但同时也意味着更高的投入。
                 建议新手从启航级开始，熟悉平台运作后再考虑升级。
               </p>
@@ -431,7 +431,7 @@ const docSections: DocSection[] = [
         title: '7天课程安排',
         content: (
           <div className="space-y-4">
-            <p className="text-text-secondary leading-relaxed">
+            <p className="text-white/40 leading-relaxed">
               7天训练营的课程经过精心设计，循序渐进地帮助学员掌握直播核心技能。
             </p>
             <div className="space-y-2">
@@ -455,7 +455,7 @@ const docSections: DocSection[] = [
                         {item.tag}
                       </Badge>
                     </div>
-                    <p className="text-text-tertiary text-sm">{item.desc}</p>
+                    <p className="text-white/30 text-sm">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -468,7 +468,7 @@ const docSections: DocSection[] = [
         title: '带班指南',
         content: (
           <div className="space-y-4">
-            <p className="text-text-secondary leading-relaxed">
+            <p className="text-white/40 leading-relaxed">
               作为领教员，带班是你的核心工作。以下是一些实用的带班指南：
             </p>
             <div className="space-y-3">
@@ -510,7 +510,7 @@ const docSections: DocSection[] = [
                   <h4 className="text-white font-medium mb-2">{section.title}</h4>
                   <ul className="space-y-1.5">
                     {section.points.map((point, i) => (
-                      <li key={i} className="flex items-start gap-2 text-text-tertiary text-sm">
+                      <li key={i} className="flex items-start gap-2 text-white/30 text-sm">
                         <span className="text-emerald-400 mt-0.5">&#x2713;</span>
                         <span>{point}</span>
                       </li>
@@ -527,7 +527,7 @@ const docSections: DocSection[] = [
         title: '结业标准',
         content: (
           <div className="space-y-4">
-            <p className="text-text-secondary leading-relaxed">
+            <p className="text-white/40 leading-relaxed">
               达到以下标准的学员可以顺利结业，并获得结业证书：
             </p>
             <div className="space-y-3">
@@ -547,7 +547,7 @@ const docSections: DocSection[] = [
                     )} />
                     <div>
                       <p className="text-white text-sm font-medium">{item.title}</p>
-                      <p className="text-text-tertiary text-xs">{item.desc}</p>
+                      <p className="text-white/30 text-xs">{item.desc}</p>
                     </div>
                   </div>
                   <Badge variant={item.required ? 'success' : 'gold'} className="text-[10px]">
@@ -572,7 +572,7 @@ const docSections: DocSection[] = [
         title: '行为规范',
         content: (
           <div className="space-y-4">
-            <p className="text-text-secondary leading-relaxed">
+            <p className="text-white/40 leading-relaxed">
               所有白手启播成员应遵守以下行为规范，共同维护良好的平台环境：
             </p>
             <div className="space-y-3">
@@ -589,7 +589,7 @@ const docSections: DocSection[] = [
                   <Shield className="w-4 h-4 text-purple-400 mt-0.5 flex-shrink-0" />
                   <div>
                     <h4 className="text-white text-sm font-medium mb-0.5">{item.title}</h4>
-                    <p className="text-text-tertiary text-sm">{item.desc}</p>
+                    <p className="text-white/30 text-sm">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -602,7 +602,7 @@ const docSections: DocSection[] = [
         title: '违规处理',
         content: (
           <div className="space-y-4">
-            <p className="text-text-secondary leading-relaxed">
+            <p className="text-white/40 leading-relaxed">
               对于违反平台规则的行为，白手启播将采取以下处理措施：
             </p>
             <div className="space-y-3">
@@ -616,13 +616,13 @@ const docSections: DocSection[] = [
                   <div className="flex items-center gap-2 mb-1">
                     <h4 className={cn('font-medium', item.color)}>{item.level}</h4>
                   </div>
-                  <p className="text-text-tertiary text-sm">{item.desc}</p>
+                  <p className="text-white/30 text-sm">{item.desc}</p>
                 </div>
               ))}
             </div>
             <div className="glass-card p-4 mt-4">
               <h4 className="text-white font-medium mb-2">申诉机制</h4>
-              <p className="text-text-tertiary text-sm">
+              <p className="text-white/30 text-sm">
                 如对处理结果有异议，可在收到通知后 7 个工作日内向平台申诉委员会提交书面申诉。
                 申诉委员会将在 15 个工作日内给出最终裁决。
               </p>
@@ -635,7 +635,7 @@ const docSections: DocSection[] = [
         title: '隐私保护',
         content: (
           <div className="space-y-4">
-            <p className="text-text-secondary leading-relaxed">
+            <p className="text-white/40 leading-relaxed">
               白手启播高度重视成员的隐私保护，承诺遵守以下原则：
             </p>
             <div className="space-y-3">
@@ -651,7 +651,7 @@ const docSections: DocSection[] = [
                   <Shield className="w-4 h-4 text-cyan-400 mt-0.5 flex-shrink-0" />
                   <div>
                     <h4 className="text-white text-sm font-medium mb-0.5">{item.title}</h4>
-                    <p className="text-text-tertiary text-sm">{item.desc}</p>
+                    <p className="text-white/30 text-sm">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -721,7 +721,7 @@ const docSections: DocSection[] = [
                   </div>
                   <div>
                     <h4 className="text-white text-sm font-medium mb-2">{item.q}</h4>
-                    <p className="text-text-tertiary text-sm leading-relaxed">{item.a}</p>
+                    <p className="text-white/30 text-sm leading-relaxed">{item.a}</p>
                   </div>
                 </div>
               </div>
@@ -881,7 +881,7 @@ export default function DocsPage() {
         />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 max-w-6xl mx-auto px-6">
         {/* 页面标题 */}
         <motion.div
           className="text-center mb-4"
@@ -893,7 +893,7 @@ export default function DocsPage() {
             <BookOpen className="w-3.5 h-3.5 mr-1.5" />
             官方文档
           </Badge>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+          <h1 className="text-3xl sm:text-4xl font-bold mb-4">
             <GradientText>文档库</GradientText>
           </h1>
           <p className="text-white/40 max-w-2xl mx-auto text-sm mb-12 sm:mb-16">

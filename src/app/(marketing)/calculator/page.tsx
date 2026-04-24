@@ -227,7 +227,7 @@ export default function CalculatorPage() {
           <Badge variant="primary" className="mb-4">
             分润收益模拟计算器
           </Badge>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+          <h1 className="text-3xl sm:text-4xl font-bold mb-4">
             <GradientText>预览你的指数增长收益</GradientText>
           </h1>
           <p className="text-white/40 max-w-2xl mx-auto text-sm mb-12 sm:mb-16">
@@ -250,7 +250,7 @@ export default function CalculatorPage() {
                 <span className="text-lg">🎓</span>
                 <h3 className="text-white font-semibold text-lg">选择等级</h3>
               </div>
-              <p className="text-text-tertiary text-sm">种子金越高，每轮收益基数越大</p>
+              <p className="text-white/30 text-sm">种子金越高，每轮收益基数越大</p>
               <div className="grid grid-cols-1 gap-3">
                 {LEVELS.map((l) => (
                   <button
@@ -297,7 +297,7 @@ export default function CalculatorPage() {
                 <span className="text-lg">⏱️</span>
                 <h3 className="text-white font-semibold text-lg">模拟周期</h3>
               </div>
-              <p className="text-text-tertiary text-sm">选择要模拟的时间跨度</p>
+              <p className="text-white/30 text-sm">选择要模拟的时间跨度</p>
               <div className="grid grid-cols-2 gap-3">
                 {ROUNDS.map((r) => (
                   <button
@@ -318,7 +318,7 @@ export default function CalculatorPage() {
                     >
                       {r.label}
                     </span>
-                    <span className="text-text-tertiary text-xs mt-0.5">{r.rounds} 轮</span>
+                    <span className="text-white/30 text-xs mt-0.5">{r.rounds} 轮</span>
                   </button>
                 ))}
               </div>
@@ -330,7 +330,7 @@ export default function CalculatorPage() {
                 <span className="text-lg">🚀</span>
                 <h3 className="text-white font-semibold text-lg">裂变速度</h3>
               </div>
-              <p className="text-text-tertiary text-sm">每轮同时带班的数量</p>
+              <p className="text-white/30 text-sm">每轮同时带班的数量</p>
               <div className="grid grid-cols-4 gap-3">
                 {SPEEDS.map((s) => (
                   <button
@@ -351,7 +351,7 @@ export default function CalculatorPage() {
                     >
                       {s.speed}x
                     </span>
-                    <span className="text-text-tertiary text-[10px] mt-0.5 text-center leading-tight">
+                    <span className="text-white/30 text-[10px] mt-0.5 text-center leading-tight">
                       {s.description}
                     </span>
                   </button>
@@ -362,7 +362,7 @@ export default function CalculatorPage() {
             {/* 模型说明 */}
             <GlassCard hover={false} className="space-y-3 !p-5 sm:!p-6">
               <h4 className="text-white/55 font-medium text-sm">数学模型说明</h4>
-              <div className="space-y-2 text-xs text-text-tertiary leading-relaxed">
+              <div className="space-y-2 text-xs text-white/30 leading-relaxed">
                 <p>
                   <span className="text-purple-400 font-medium">1 带 9 出 3：</span>
                   每轮每个领教员带 9 个学员，其中 3 个孵化为新领教员
@@ -399,7 +399,7 @@ export default function CalculatorPage() {
                 transition={{ duration: 0.4 }}
               >
                 <GlassCard hover={false} className="text-center !p-5 sm:!p-6">
-                  <p className="text-text-tertiary text-xs mb-2">总投资（种子金）</p>
+                  <p className="text-white/30 text-xs mb-2">总投资（种子金）</p>
                   <AnimatedCounter
                     value={result.totalInvestment}
                     formatFn={formatCurrency}
@@ -415,7 +415,7 @@ export default function CalculatorPage() {
                 transition={{ duration: 0.4, delay: 0.05 }}
               >
                 <GlassCard hover={false} glow className="text-center !p-5 sm:!p-6">
-                  <p className="text-text-tertiary text-xs mb-2">总收益</p>
+                  <p className="text-white/30 text-xs mb-2">总收益</p>
                   <AnimatedCounter
                     value={result.totalEarning}
                     formatFn={formatCurrency}
@@ -431,7 +431,7 @@ export default function CalculatorPage() {
                 transition={{ duration: 0.4, delay: 0.1 }}
               >
                 <GlassCard hover={false} className="text-center !p-5 sm:!p-6">
-                  <p className="text-text-tertiary text-xs mb-2">投资回报率 ROI</p>
+                  <p className="text-white/30 text-xs mb-2">投资回报率 ROI</p>
                   <AnimatedCounter
                     value={Math.round(result.roi)}
                     suffix="%"
@@ -447,13 +447,13 @@ export default function CalculatorPage() {
                 transition={{ duration: 0.4, delay: 0.15 }}
               >
                 <GlassCard hover={false} className="text-center !p-5 sm:!p-6">
-                  <p className="text-text-tertiary text-xs mb-2">回本轮次</p>
+                  <p className="text-white/30 text-xs mb-2">回本轮次</p>
                   {result.paybackRound > 0 ? (
                     <div className="flex items-center justify-center gap-1">
                       <span className="text-xl lg:text-2xl font-bold text-cyan-400">
                         第 {result.paybackRound}
                       </span>
-                      <span className="text-text-tertiary text-sm">轮</span>
+                      <span className="text-white/30 text-sm">轮</span>
                     </div>
                   ) : (
                     <span className="text-xl lg:text-2xl font-bold text-white/30">--</span>
@@ -467,7 +467,7 @@ export default function CalculatorPage() {
               <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
                 <div>
                   <h3 className="text-white font-semibold text-lg">收益概览</h3>
-                  <p className="text-text-tertiary text-sm mt-1">
+                  <p className="text-white/30 text-sm mt-1">
                     {currentLevelInfo.name} · {result.rounds.label} · {result.speed.label} · 共{' '}
                     {result.totalRounds} 轮
                   </p>
@@ -481,22 +481,22 @@ export default function CalculatorPage() {
               <div className="grid grid-cols-4 gap-2 mb-6">
                 <div className="text-center">
                   <div className="h-2 rounded-full bg-purple-500 mb-1.5" />
-                  <p className="text-xs text-text-tertiary">带班课酬</p>
+                  <p className="text-xs text-white/30">带班课酬</p>
                   <p className="text-sm font-semibold text-purple-300">40%</p>
                 </div>
                 <div className="text-center">
                   <div className="h-2 rounded-full bg-indigo-500 mb-1.5" />
-                  <p className="text-xs text-text-tertiary">分享销酬</p>
+                  <p className="text-xs text-white/30">分享销酬</p>
                   <p className="text-sm font-semibold text-indigo-300">30%</p>
                 </div>
                 <div className="text-center">
                   <div className="h-2 rounded-full bg-cyan-500 mb-1.5" />
-                  <p className="text-xs text-text-tertiary">传承激励</p>
+                  <p className="text-xs text-white/30">传承激励</p>
                   <p className="text-sm font-semibold text-cyan-300">10%</p>
                 </div>
                 <div className="text-center">
                   <div className="h-2 rounded-full bg-white/15 mb-1.5" />
-                  <p className="text-xs text-text-tertiary">平台运营</p>
+                  <p className="text-xs text-white/30">平台运营</p>
                   <p className="text-sm font-semibold text-white/40">20%</p>
                 </div>
               </div>
@@ -511,7 +511,7 @@ export default function CalculatorPage() {
             {/* 分润构成柱状图 */}
             <GlassCard hover={false} className="!p-5 sm:!p-6">
               <h3 className="text-white font-semibold text-lg mb-1">每轮分润构成</h3>
-              <p className="text-text-tertiary text-sm mb-4">各轮次收益来源明细</p>
+              <p className="text-white/30 text-sm mb-4">各轮次收益来源明细</p>
               <div className="overflow-hidden">
               <RoundBreakdownChart data={chartData} />
               </div>
@@ -522,7 +522,7 @@ export default function CalculatorPage() {
               <div className="flex items-center justify-between mb-4">
                 <div>
                   <h3 className="text-white font-semibold text-lg">轮次明细</h3>
-                  <p className="text-text-tertiary text-sm mt-1">
+                  <p className="text-white/30 text-sm mt-1">
                     {displayRounds.length === result.totalRounds
                       ? `共 ${result.totalRounds} 轮`
                       : `显示 ${displayRounds.length} / ${result.totalRounds} 轮（关键轮次采样）`}
@@ -534,12 +534,12 @@ export default function CalculatorPage() {
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-white/[0.06]">
-                      <th className="text-left text-text-tertiary font-medium py-3 px-3">轮次</th>
-                      <th className="text-right text-text-tertiary font-medium py-3 px-3">领教员</th>
-                      <th className="text-right text-text-tertiary font-medium py-3 px-3">新学员</th>
-                      <th className="text-right text-text-tertiary font-medium py-3 px-3">当轮收益</th>
-                      <th className="text-right text-text-tertiary font-medium py-3 px-3">累计收益</th>
-                      <th className="text-right text-text-tertiary font-medium py-3 px-3">团队规模</th>
+                      <th className="text-left text-white/30 font-medium py-3 px-3">轮次</th>
+                      <th className="text-right text-white/30 font-medium py-3 px-3">领教员</th>
+                      <th className="text-right text-white/30 font-medium py-3 px-3">新学员</th>
+                      <th className="text-right text-white/30 font-medium py-3 px-3">当轮收益</th>
+                      <th className="text-right text-white/30 font-medium py-3 px-3">累计收益</th>
+                      <th className="text-right text-white/30 font-medium py-3 px-3">团队规模</th>
                     </tr>
                   </thead>
                   <tbody>

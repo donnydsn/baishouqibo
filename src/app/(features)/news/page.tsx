@@ -81,7 +81,7 @@ function NewsCard({ item, index }: { item: NewsItem; index: number }) {
                 </Badge>
               ))}
             </div>
-            <div className="flex items-center gap-1.5 text-text-tertiary text-xs">
+            <div className="flex items-center gap-1.5 text-white/30 text-xs">
               <Calendar className="w-3.5 h-3.5" />
               <span>{item.publishedAt}</span>
             </div>
@@ -93,7 +93,7 @@ function NewsCard({ item, index }: { item: NewsItem; index: number }) {
           </h3>
 
           {/* 摘要 */}
-          <p className="text-text-secondary text-sm leading-relaxed mb-3">
+          <p className="text-white/40 text-sm leading-relaxed mb-3">
             {item.summary}
           </p>
 
@@ -108,7 +108,7 @@ function NewsCard({ item, index }: { item: NewsItem; index: number }) {
                 className="overflow-hidden"
               >
                 <div className="pt-3 border-t border-white/[0.08]">
-                  <p className="text-text-secondary text-sm leading-relaxed whitespace-pre-line">
+                  <p className="text-white/40 text-sm leading-relaxed whitespace-pre-line">
                     {item.content}
                   </p>
                 </div>
@@ -121,7 +121,7 @@ function NewsCard({ item, index }: { item: NewsItem; index: number }) {
             <motion.div
               animate={{ rotate: expanded ? 180 : 0 }}
               transition={{ duration: 0.3 }}
-              className="text-text-tertiary group-hover:text-purple-400 transition-colors"
+              className="text-white/30 group-hover:text-purple-400 transition-colors"
             >
               <ChevronDown className="w-5 h-5" />
             </motion.div>
@@ -174,7 +174,7 @@ export default function NewsPage() {
             <Newspaper className="w-3.5 h-3.5 mr-1.5" />
             最新动态
           </Badge>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+          <h1 className="text-3xl sm:text-4xl font-bold mb-4">
             <GradientText>动态墙</GradientText>
           </h1>
           <p className="text-white/40 max-w-2xl mx-auto text-sm mb-12 sm:mb-16">
@@ -225,10 +225,10 @@ export default function NewsPage() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.4, delay: 0.3 }}
         >
-          <p className="text-text-tertiary text-sm">
+          <p className="text-white/30 text-sm">
             共 <span className="text-white/55 font-medium">{activeCount}</span> 条动态
           </p>
-          <div className="flex items-center gap-1.5 text-text-tertiary text-xs">
+          <div className="flex items-center gap-1.5 text-white/30 text-xs">
             <Tag className="w-3.5 h-3.5" />
             <span>点击卡片展开详情</span>
           </div>
@@ -251,7 +251,7 @@ export default function NewsPage() {
             animate={{ opacity: 1 }}
           >
             <Newspaper className="w-12 h-12 text-white/10 mx-auto mb-4" />
-            <p className="text-text-tertiary">暂无该分类的动态</p>
+            <p className="text-white/30">暂无该分类的动态</p>
           </motion.div>
         )}
       </div>

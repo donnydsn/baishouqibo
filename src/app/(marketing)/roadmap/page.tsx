@@ -199,13 +199,13 @@ function StageCard({ stage, index }: { stage: RoadmapStage; index: number }) {
                     </Badge>
                   </div>
                   <h3 className="text-lg font-bold text-white mb-2">{stage.name}</h3>
-                  <p className="text-text-secondary text-sm leading-relaxed mb-4">
+                  <p className="text-white/40 text-sm leading-relaxed mb-4">
                     {stage.description}
                   </p>
 
                   {/* 所需条件 */}
                   <div className="mb-3">
-                    <p className="text-xs font-medium text-text-tertiary mb-2 flex items-center gap-1">
+                    <p className="text-xs font-medium text-white/30 mb-2 flex items-center gap-1">
                       <ChevronRight className="w-3 h-3" />
                       所需条件
                     </p>
@@ -221,7 +221,7 @@ function StageCard({ stage, index }: { stage: RoadmapStage; index: number }) {
 
                   {/* 权益说明 */}
                   <div>
-                    <p className="text-xs font-medium text-text-tertiary mb-2 flex items-center gap-1">
+                    <p className="text-xs font-medium text-white/30 mb-2 flex items-center gap-1">
                       <ChevronRight className="w-3 h-3" />
                       权益说明
                     </p>
@@ -305,13 +305,13 @@ function StageCard({ stage, index }: { stage: RoadmapStage; index: number }) {
                     </Badge>
                   </div>
                   <h3 className="text-lg font-bold text-white mb-2">{stage.name}</h3>
-                  <p className="text-text-secondary text-sm leading-relaxed mb-4">
+                  <p className="text-white/40 text-sm leading-relaxed mb-4">
                     {stage.description}
                   </p>
 
                   {/* 所需条件 */}
                   <div className="mb-3">
-                    <p className="text-xs font-medium text-text-tertiary mb-2 flex items-center gap-1">
+                    <p className="text-xs font-medium text-white/30 mb-2 flex items-center gap-1">
                       <ChevronRight className="w-3 h-3" />
                       所需条件
                     </p>
@@ -327,7 +327,7 @@ function StageCard({ stage, index }: { stage: RoadmapStage; index: number }) {
 
                   {/* 权益说明 */}
                   <div>
-                    <p className="text-xs font-medium text-text-tertiary mb-2 flex items-center gap-1">
+                    <p className="text-xs font-medium text-white/30 mb-2 flex items-center gap-1">
                       <ChevronRight className="w-3 h-3" />
                       权益说明
                     </p>
@@ -381,11 +381,11 @@ function StageCard({ stage, index }: { stage: RoadmapStage; index: number }) {
                 </Badge>
               </div>
               <h3 className="text-base font-bold text-white mb-1.5">{stage.name}</h3>
-              <p className="text-text-secondary text-xs leading-relaxed mb-3">
+              <p className="text-white/40 text-xs leading-relaxed mb-3">
                 {stage.description}
               </p>
               <div className="mb-2">
-                <p className="text-[10px] font-medium text-text-tertiary mb-1.5">所需条件</p>
+                <p className="text-[10px] font-medium text-white/30 mb-1.5">所需条件</p>
                 <div className="space-y-2.5">
                   {stage.conditions.map((condition, i) => (
                     <div key={i} className="flex items-start gap-1.5 text-xs text-white/55">
@@ -396,7 +396,7 @@ function StageCard({ stage, index }: { stage: RoadmapStage; index: number }) {
                 </div>
               </div>
               <div>
-                <p className="text-[10px] font-medium text-text-tertiary mb-1.5">权益说明</p>
+                <p className="text-[10px] font-medium text-white/30 mb-1.5">权益说明</p>
                 <div className="space-y-2.5">
                   {stage.benefits.map((benefit, i) => (
                     <div key={i} className="flex items-start gap-1.5 text-xs text-white/55">
@@ -448,7 +448,7 @@ export default function RoadmapPage() {
             <Crown className="w-3 h-3 mr-1" />
             成长进阶路
           </Badge>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+          <h1 className="text-3xl sm:text-4xl font-bold mb-4">
             <GradientText>从直播间小白到平台合伙人</GradientText>
           </h1>
           <p className="text-white/40 max-w-2xl mx-auto text-sm mb-12 sm:mb-16">
@@ -497,7 +497,7 @@ export default function RoadmapPage() {
           transition={{ duration: 0.6 }}
         >
           <GlassCard hover={false} className="inline-block px-8 py-6">
-            <p className="text-text-secondary text-sm mb-2">准备好开始你的成长之旅了吗？</p>
+            <p className="text-white/40 text-sm mb-2">准备好开始你的成长之旅了吗？</p>
             <p className="text-lg font-semibold">
               <GradientText variant="gold">每一步成长，都有看得见的回报</GradientText>
             </p>

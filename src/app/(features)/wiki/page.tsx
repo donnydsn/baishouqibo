@@ -111,7 +111,7 @@ export default function WikiPage() {
   }, [selectedTag]);
 
   return (
-    <section className="relative min-h-screen py-20 overflow-hidden">
+    <section className="relative min-h-screen bg-[#0a0a0a] py-20 sm:py-28 overflow-hidden">
       {/* 背景装饰 */}
       <div className="absolute inset-0 pointer-events-none">
         <div
@@ -124,10 +124,10 @@ export default function WikiPage() {
         />
       </div>
 
-      <div className="relative z-10 px-5 sm:px-8 max-w-5xl mx-auto">
+      <div className="relative z-10 px-6 max-w-5xl mx-auto">
         {/* 页面标题 */}
         <motion.div
-          className="text-center mb-8 sm:mb-10"
+          className="text-center mb-4"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -136,10 +136,10 @@ export default function WikiPage() {
             <Brain className="w-3.5 h-3.5 mr-1.5" />
             共建知识库
           </Badge>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+          <h1 className="text-3xl sm:text-4xl font-bold mb-4">
             <GradientText>问答知识库</GradientText>
           </h1>
-          <p className="text-text-secondary max-w-2xl mx-auto text-base sm:text-lg">
+          <p className="text-white/40 max-w-2xl mx-auto text-sm mb-12 sm:mb-16">
             汇集常见问题与精选回答，共建共享的直播知识社区
           </p>
         </motion.div>
@@ -212,8 +212,8 @@ export default function WikiPage() {
                               已采纳
                             </Badge>
                           )}
-                          <span className="text-text-tertiary text-xs">{question.author}</span>
-                          <span className="text-text-tertiary text-xs">{question.createdAt}</span>
+                          <span className="text-white/30 text-xs">{question.author}</span>
+                          <span className="text-white/30 text-xs">{question.createdAt}</span>
                         </div>
 
                         <h3 className="text-white font-semibold text-base sm:text-lg mb-2 leading-snug">
@@ -230,7 +230,7 @@ export default function WikiPage() {
                         </div>
 
                         {/* 统计信息 */}
-                        <div className="flex items-center gap-4 text-text-tertiary text-xs">
+                        <div className="flex items-center gap-4 text-white/30 text-xs">
                           <span className="flex items-center gap-1">
                             <MessageCircle className="w-3.5 h-3.5" />
                             {question.answers} 回答
@@ -335,7 +335,7 @@ export default function WikiPage() {
                 <h3 className="text-white font-semibold text-lg">
                   <GradientText variant="gold">积分体系说明</GradientText>
                 </h3>
-                <p className="text-text-tertiary text-sm">共建知识库的核心激励机制</p>
+                <p className="text-white/30 text-sm">共建知识库的核心激励机制</p>
               </div>
             </div>
 
@@ -357,13 +357,13 @@ export default function WikiPage() {
                   <span className="text-2xl mb-2 block">{item.icon}</span>
                   <p className="text-white/55 text-sm font-medium mb-1">{item.action}</p>
                   <p className="text-amber-400 text-sm font-bold mb-1">{item.points}</p>
-                  <p className="text-text-tertiary text-xs">{item.desc}</p>
+                  <p className="text-white/30 text-xs">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
 
             <div className="mt-6 pt-5 border-t border-white/[0.06]">
-              <p className="text-text-tertiary text-xs leading-relaxed text-center">
+              <p className="text-white/30 text-xs leading-relaxed text-center">
                 积分可用于解锁高级课程内容、兑换专属福利、提升社区等级。更多玩法持续更新中...
               </p>
             </div>

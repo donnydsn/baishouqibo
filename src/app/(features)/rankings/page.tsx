@@ -212,7 +212,7 @@ function TopThreeCard({
         <h3 className={cn('font-bold text-white mb-1', isFirst ? 'text-xl' : 'text-lg')}>
           {item.nickname}
         </h3>
-        <p className="text-text-tertiary text-xs mb-3">
+        <p className="text-white/30 text-xs mb-3">
           {item.levelName}
         </p>
 
@@ -224,13 +224,13 @@ function TopThreeCard({
             className={isFirst ? 'gradient-text-gold' : 'gradient-text'}
           />
         </div>
-        <p className="text-text-tertiary text-xs mt-1">
+        <p className="text-white/30 text-xs mt-1">
           {dimension.label}
           {dimension.unit ? `（${dimension.unit}）` : ''}
         </p>
 
         {/* 附加信息 */}
-        <div className="flex items-center justify-center gap-3 mt-3 text-xs text-text-tertiary">
+        <div className="flex items-center justify-center gap-3 mt-3 text-xs text-white/30">
           <span className="flex items-center gap-1">
             <Users className="w-3 h-3" />
             {item.classCount} 班
@@ -302,7 +302,7 @@ function RankingRow({
             formatFn={dimension.formatFn}
             className="font-bold text-white text-sm"
           />
-          <p className="text-text-tertiary text-[10px]">{dimension.unit}</p>
+          <p className="text-white/30 text-[10px]">{dimension.unit}</p>
         </div>
       </GlassCard>
     </motion.div>
@@ -357,7 +357,7 @@ export default function RankingsPage() {
             <Trophy className="w-3 h-3 mr-1" />
             高手排行榜
           </Badge>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+          <h1 className="text-3xl sm:text-4xl font-bold mb-4">
             <GradientText variant="gold">见证每一位高手的荣耀</GradientText>
           </h1>
           <p className="text-white/40 max-w-2xl mx-auto text-sm mb-12 sm:mb-16">
@@ -432,8 +432,8 @@ export default function RankingsPage() {
             {filteredRankings.length === 0 ? (
               <GlassCard hover={false} className="text-center py-16">
                 <Trophy className="w-12 h-12 text-white/10 mx-auto mb-4" />
-                <p className="text-text-tertiary text-lg">该段位暂无排名数据</p>
-                <p className="text-text-tertiary text-sm mt-1">请切换其他段位查看</p>
+                <p className="text-white/30 text-lg">该段位暂无排名数据</p>
+                <p className="text-white/30 text-sm mt-1">请切换其他段位查看</p>
               </GlassCard>
             ) : (
               <>
@@ -509,21 +509,21 @@ export default function RankingsPage() {
                   value={mockRankings.reduce((sum, r) => sum + r.classCount, 0)}
                   className="text-xl font-bold gradient-text"
                 />
-                <p className="text-text-tertiary text-xs mt-1">总带班数</p>
+                <p className="text-white/30 text-xs mt-1">总带班数</p>
               </div>
               <div className="text-center">
                 <AnimatedCounter
                   value={mockRankings.reduce((sum, r) => sum + r.studentCount, 0)}
                   className="text-xl font-bold gradient-text-cyan"
                 />
-                <p className="text-text-tertiary text-xs mt-1">总学员数</p>
+                <p className="text-white/30 text-xs mt-1">总学员数</p>
               </div>
               <div className="text-center">
                 <AnimatedCounter
                   value={mockRankings.reduce((sum, r) => sum + r.instructorCount, 0)}
                   className="text-xl font-bold gradient-text-gold"
                 />
-                <p className="text-text-tertiary text-xs mt-1">总孵化讲师</p>
+                <p className="text-white/30 text-xs mt-1">总孵化讲师</p>
               </div>
               <div className="text-center">
                 <AnimatedCounter
@@ -531,7 +531,7 @@ export default function RankingsPage() {
                   formatFn={formatCurrency}
                   className="text-xl font-bold gradient-text-gold"
                 />
-                <p className="text-text-tertiary text-xs mt-1">总收益</p>
+                <p className="text-white/30 text-xs mt-1">总收益</p>
               </div>
             </div>
           </GlassCard>
